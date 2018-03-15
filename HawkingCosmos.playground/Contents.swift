@@ -1,5 +1,14 @@
-//: Playground - noun: a place where people can play
+import SpriteKit
+import PlaygroundSupport
 
-import Cocoa
+let mainFrame = CGRect(x: 0, y: 0, width: 750, height: 563)
+let mainView = SKView(frame: mainFrame)
+mainView.showsFPS = true
+mainView.showsNodeCount = true
+mainView.showsPhysics = false
 
-var str = "Hello, playground"
+let splashScene: SKScene = SplashSceneFile(fileNamed: "scenes/SplashScene.sks")!
+splashScene.scaleMode = .aspectFit
+mainView.presentScene(splashScene)
+
+PlaygroundPage.current.liveView = mainView
