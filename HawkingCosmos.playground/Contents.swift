@@ -35,6 +35,16 @@ public class MainMenuSceneFile: SKScene {
             }
         }
     }
+    func goToScene(withName: String) {
+        var sceneName: String
+        switch withName {
+        case "txtBack":
+            sceneName = "splash"
+        default:
+            sceneName = "splash"
+        }
+        view?.presentScene(sceneFiles.init().show(Scene: sceneName), transition: SKTransition.fade(withDuration: 2.0))
+    }
 }
 //------------------------------------------------------------------------------------------------------------------------
 public class sceneFiles {
