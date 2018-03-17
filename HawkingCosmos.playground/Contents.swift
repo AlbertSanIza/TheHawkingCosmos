@@ -32,20 +32,21 @@ public class MainMenuSceneFile: SKScene {
         }
     }
     func goToScene(withName: String) {
-        var sceneName: String
+        var sceneName: String = ""
         switch withName {
-        case "txtBack":
+        case "txtStart", "1", "36":
             sceneName = "splash"
-        case "txtStart":
+        case "txtInstructions", "34":
             sceneName = "splash"
-        case "txtInstructions":
+        case "txtAbout", "0":
             sceneName = "splash"
-        case "txtAbout":
+        case "txtBack", "53", "11":
             sceneName = "splash"
-        default:
-            sceneName = "splash"
+        default: break
         }
-        view?.presentScene(sceneFiles.init().show(Scene: sceneName), transition: SKTransition.fade(withDuration: 1.0))
+        if (sceneName != "") {
+            view?.presentScene(sceneFiles.init().show(Scene: sceneName), transition: SKTransition.fade(withDuration: 1.0))
+        }
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
