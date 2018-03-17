@@ -58,6 +58,10 @@ public class sceneFiles {
             sceneFile = SplashSceneFile(fileNamed: "scenes/SplashScene")!
         case "mainMenu":
             sceneFile = MainMenuSceneFile(fileNamed: "scenes/MainMenuScene")!
+        case "instructions":
+            sceneFile = InstructionsSceneFile(fileNamed: "scenes/InstructionsScene")!
+        case "about":
+            sceneFile = AboutSceneFile(fileNamed: "scenes/AboutScene")!
         default:
             sceneFile = SplashSceneFile(fileNamed: "scenes/SplashScene")!
         }
