@@ -37,9 +37,9 @@ public class MainMenuSceneFile: SKScene {
         case "txtStart", "1", "36":
             sceneName = "splash"
         case "txtInstructions", "34":
-            sceneName = "splash"
+            sceneName = "instructions"
         case "txtAbout", "0":
-            sceneName = "splash"
+            sceneName = "about"
         case "txtBack", "53", "11":
             sceneName = "splash"
         default: break
