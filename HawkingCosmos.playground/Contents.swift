@@ -6,6 +6,9 @@ import PlaygroundSupport
 public class SplashSceneFile: SKScene {
     override public func sceneDidLoad() {
         super.sceneDidLoad()
+        if let sksStars: SKSpriteNode = childNode(withName: "sksStars") as! SKSpriteNode? {
+            sksStars.texture = SKTexture(imageNamed: "sprites/background/starsLayer.png")
+        }
     }
     override public func keyUp(with event: NSEvent) {
         view?.presentScene(sceneFiles.init().show(Scene: "mainMenu"), transition: SKTransition.fade(withDuration: 1.0))
