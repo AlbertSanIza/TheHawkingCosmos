@@ -25,6 +25,7 @@ public class MainMenuSceneFile: SKScene {
             switch touchedNode.name {
             case "txtStart"?, "txtInstructions"?, "txtAbout"?, "txtBack"?:
                 touchedNode.run(SKAction.fadeOut(withDuration: 0.5)) {
+                    self.goToScene(withName: touchedNode.name!)
                 }
             default: break
             }
