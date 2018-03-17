@@ -34,6 +34,22 @@ public class MainMenuSceneFile: SKScene {
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
+public class sceneFiles {
+    public func show(Scene: String) -> SKScene {
+        let sceneFile: SKScene
+        switch Scene {
+        case "splash":
+            sceneFile = SplashSceneFile(fileNamed: "scenes/SplashScene")!
+        case "mainMenu":
+            sceneFile = MainMenuSceneFile(fileNamed: "scenes/MainMenuScene")!
+        default:
+            sceneFile = SplashSceneFile(fileNamed: "scenes/SplashScene")!
+        }
+        sceneFile.scaleMode = .aspectFit
+        return sceneFile
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
 //let mainFrame = CGRect(x: 0, y: 0, width: 1024, height: 768)
 let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
 //let mainFrame = CGRect(x: 0, y: 0, width: 600, height: 450)
