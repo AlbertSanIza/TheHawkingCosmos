@@ -18,6 +18,8 @@ public class MainMenuSceneFile: SKScene {
         super.sceneDidLoad()
     }
     override public func keyUp(with event: NSEvent) {
+        print(event.keyCode)
+    }
     override public func mouseDown(with event: NSEvent) {
         let mousePoint = convertPoint(fromView: CGPoint(x: event.locationInWindow.x, y: event.locationInWindow.y))
         if let touchedNode = nodes(at: mousePoint).first {
