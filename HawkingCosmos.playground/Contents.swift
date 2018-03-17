@@ -18,6 +18,16 @@ public class MainMenuSceneFile: SKScene {
         super.sceneDidLoad()
     }
     override public func keyUp(with event: NSEvent) {
+    override public func mouseDown(with event: NSEvent) {
+        let mousePoint = convertPoint(fromView: CGPoint(x: event.locationInWindow.x, y: event.locationInWindow.y))
+        if let touchedNode = nodes(at: mousePoint).first {
+            switch touchedNode.name {
+            case "txtStart"?, "txtInstructions"?, "txtAbout"?, "txtBack"?:
+                touchedNode.run(SKAction.fadeOut(withDuration: 0.5)) {
+                }
+            default: break
+            }
+        }
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
