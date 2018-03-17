@@ -50,6 +50,70 @@ public class MainMenuSceneFile: SKScene {
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
+public class InstructionsSceneFile: SKScene {
+    override public func sceneDidLoad() {
+        super.sceneDidLoad()
+    }
+    override public func keyUp(with event: NSEvent) {
+        goToScene(withName: String(event.keyCode))
+    }
+    override public func mouseDown(with event: NSEvent) {
+        let mousePoint = convertPoint(fromView: CGPoint(x: event.locationInWindow.x, y: event.locationInWindow.y))
+        if let touchedNode = nodes(at: mousePoint).first {
+            switch touchedNode.name {
+            case "txtBack"?:
+                touchedNode.run(SKAction.fadeOut(withDuration: 0.5)) {
+                    self.goToScene(withName: touchedNode.name!)
+                }
+            default: break
+            }
+        }
+    }
+    func goToScene(withName: String) {
+        var sceneName: String = ""
+        switch withName {
+        case "txtBack", "53", "11":
+            sceneName = "mainMenu"
+        default: break
+        }
+        if (sceneName != "") {
+            view?.presentScene(sceneFiles.init().show(Scene: sceneName), transition: SKTransition.fade(withDuration: 1.0))
+        }
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
+public class AboutSceneFile: SKScene {
+    override public func sceneDidLoad() {
+        super.sceneDidLoad()
+    }
+    override public func keyUp(with event: NSEvent) {
+        goToScene(withName: String(event.keyCode))
+    }
+    override public func mouseDown(with event: NSEvent) {
+        let mousePoint = convertPoint(fromView: CGPoint(x: event.locationInWindow.x, y: event.locationInWindow.y))
+        if let touchedNode = nodes(at: mousePoint).first {
+            switch touchedNode.name {
+            case "txtBack"?:
+                touchedNode.run(SKAction.fadeOut(withDuration: 0.5)) {
+                    self.goToScene(withName: touchedNode.name!)
+                }
+            default: break
+            }
+        }
+    }
+    func goToScene(withName: String) {
+        var sceneName: String = ""
+        switch withName {
+        case "txtBack", "53", "11":
+            sceneName = "mainMenu"
+        default: break
+        }
+        if (sceneName != "") {
+            view?.presentScene(sceneFiles.init().show(Scene: sceneName), transition: SKTransition.fade(withDuration: 1.0))
+        }
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
 public class sceneFiles {
     public func show(Scene: String) -> SKScene {
         let sceneFile: SKScene
