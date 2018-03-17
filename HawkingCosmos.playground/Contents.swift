@@ -40,6 +40,12 @@ public class MainMenuSceneFile: SKScene {
         switch withName {
         case "txtBack":
             sceneName = "splash"
+        case "txtStart":
+            sceneName = "splash"
+        case "txtInstructions":
+            sceneName = "splash"
+        case "txtAbout":
+            sceneName = "splash"
         default:
             sceneName = "splash"
         }
