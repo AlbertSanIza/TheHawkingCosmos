@@ -17,7 +17,11 @@ public class MainMenuSceneFile: SKScene {
         super.sceneDidLoad()
     }
     override public func keyUp(with event: NSEvent) {
-        print(event.keyCode)
+        switch event.keyCode {
+        case 53, 11:
+            goToScene(withName: "txtBack")
+        default: break
+        }
     }
     override public func mouseDown(with event: NSEvent) {
         let mousePoint = convertPoint(fromView: CGPoint(x: event.locationInWindow.x, y: event.locationInWindow.y))
