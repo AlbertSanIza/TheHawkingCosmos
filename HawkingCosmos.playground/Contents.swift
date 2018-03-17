@@ -8,9 +8,7 @@ public class SplashSceneFile: SKScene {
         super.sceneDidLoad()
     }
     override public func keyUp(with event: NSEvent) {
-        let mainMenuScene: SKScene = MainMenuSceneFile(fileNamed: "scenes/MainMenuScene")!
-        mainMenuScene.scaleMode = .aspectFit
-        view?.presentScene(mainMenuScene, transition: SKTransition.fade(withDuration: 2.0))
+        view?.presentScene(sceneFiles.init().show(Scene: "mainMenu"), transition: SKTransition.fade(withDuration: 2.0))
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
