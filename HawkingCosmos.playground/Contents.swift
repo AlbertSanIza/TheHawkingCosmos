@@ -43,7 +43,7 @@ public class MainMenuSceneFile: SKScene {
         default:
             sceneName = "splash"
         }
-        view?.presentScene(sceneFiles.init().show(Scene: sceneName), transition: SKTransition.fade(withDuration: 2.0))
+        view?.presentScene(sceneFiles.init().show(Scene: sceneName), transition: SKTransition.fade(withDuration: 1.0))
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
