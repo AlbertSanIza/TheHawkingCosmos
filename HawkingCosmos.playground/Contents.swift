@@ -1,4 +1,5 @@
 //------------------------------------------------------------------------------------------------------------------------
+import SceneKit
 import SpriteKit
 import Foundation
 import PlaygroundSupport
