@@ -154,9 +154,9 @@ let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
 let mainView: SCNView = SCNView(frame: mainFrame)
 let gameScene: SCNScene = SCNScene()
 
-let camera: SCNCamera = SCNCamera()
 let cameraNode: SCNNode = SCNNode()
-cameraNode.camera = camera
+cameraNode.camera = SCNCamera()
+cameraNode.camera?.zFar = 300
 gameScene.rootNode.addChildNode(cameraNode)
 
 let light = SCNLight()
