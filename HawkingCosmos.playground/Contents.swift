@@ -165,6 +165,9 @@ lightNode.light = light
 lightNode.position = SCNVector3(x: 1.5, y: 1.5, z: 1.5)
 gameScene.rootNode.addChildNode(lightNode)
 
+let stars = SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")
+gameScene.rootNode.addParticleSystem(stars!)
+
 let cubeGeometry = SCNBox(width: 1.0, height: 1.0, length: 1.0, chamferRadius: 0.0)
 let cubeNode = SCNNode(geometry: cubeGeometry)
 gameScene.rootNode.addChildNode(cubeNode)
