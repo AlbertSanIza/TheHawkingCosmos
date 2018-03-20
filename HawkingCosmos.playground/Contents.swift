@@ -162,15 +162,6 @@ gameScene.rootNode.addChildNode(cameraNode)
 let stars = SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")
 gameScene.rootNode.addParticleSystem(stars!)
 
-let cubeGeometry = SCNBox(width: 1.0, height: 1.0, length: 1.0, chamferRadius: 0.0)
-let cubeNode = SCNNode(geometry: cubeGeometry)
-gameScene.rootNode.addChildNode(cubeNode)
-
-cameraNode.position = SCNVector3(x: -3.0, y: 3.0, z: 3.0)
-let constraint = SCNLookAtConstraint(target: cubeNode)
-constraint.isGimbalLockEnabled = true
-cameraNode.constraints = [constraint]
-
 mainView.scene = gameScene
 mainView.showsStatistics = true
 mainView.backgroundColor = NSColor.black
