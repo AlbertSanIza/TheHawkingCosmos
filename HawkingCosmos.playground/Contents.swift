@@ -162,7 +162,7 @@ gameScene.rootNode.addChildNode(cameraNode)
 let light = SCNLight()
 let lightNode = SCNNode()
 lightNode.light = light
-lightNode.position = SCNVector3(x: 1.5, y: 1.5, z: 1.5)
+lightNode.position = SCNVector3(x: 0.0, y: 0.0, z: 0.0)
 gameScene.rootNode.addChildNode(lightNode)
 
 let stars = SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")
