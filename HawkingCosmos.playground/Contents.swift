@@ -151,5 +151,32 @@ let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
 //mainView.presentScene(splashScene)
 //PlaygroundPage.current.liveView = mainView
 //------------------------------------------------------------------------------------------------------------------------
+let mainView: SCNView = SCNView(frame: mainFrame)
+let gameScene: SCNScene = SCNScene()
+
+let camera: SCNCamera = SCNCamera()
+let cameraNode: SCNNode = SCNNode()
+cameraNode.camera = camera
+gameScene.rootNode.addChildNode(cameraNode)
+
+let light = SCNLight()
+let lightNode = SCNNode()
+lightNode.light = light
+lightNode.position = SCNVector3(x: 1.5, y: 1.5, z: 1.5)
+gameScene.rootNode.addChildNode(lightNode)
+
+let cubeGeometry = SCNBox(width: 1.0, height: 1.0, length: 1.0, chamferRadius: 0.0)
+let cubeNode = SCNNode(geometry: cubeGeometry)
+gameScene.rootNode.addChildNode(cubeNode)
+
+cameraNode.position = SCNVector3(x: -3.0, y: 3.0, z: 3.0)
+let constraint = SCNLookAtConstraint(target: cubeNode)
+constraint.isGimbalLockEnabled = true
+cameraNode.constraints = [constraint]
+
+mainView.scene = gameScene
+mainView.showsStatistics = true
+mainView.backgroundColor = NSColor.black
+mainView.allowsCameraControl = true
 PlaygroundPage.current.liveView = mainView
 //------------------------------------------------------------------------------------------------------------------------
