@@ -15,19 +15,16 @@ class ViewController: NSViewController {
     var cameraNode: SCNNode!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-        setupScene()
-        setupCamera()
-        setupPlanets()
-        setupRings()
-    }
-    func setupView() {
         scnView = self.view as! SCNView
         scnView.showsStatistics = true
         scnView.backgroundColor = NSColor.black
         scnView.allowsCameraControl = true
         scnView.delegate = self
         scnView.isPlaying = true
+        setupScene()
+        setupCamera()
+        setupPlanets()
+        setupRings()
     }
     func setupScene() {
         scnScene = GameScene()
