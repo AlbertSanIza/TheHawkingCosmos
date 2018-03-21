@@ -36,7 +36,7 @@ class ViewController: NSViewController {
     func setupCamera() {
         cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(x: 0, y: 5, z: 10)
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: 0)
         scnScene.rootNode.addChildNode(cameraNode)
     }
     func setupPlanets() {
