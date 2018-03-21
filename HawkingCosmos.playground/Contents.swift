@@ -238,16 +238,8 @@ public class sceneFiles {
 //------------------------------------------------------------------------------------------------------------------------
 public class Planets {
     public let info = [
-        "sun": [
-            "size": 800, "distance": 30, "speed": [
-                "rotation": 0.002, "translation": 3
-            ]
-        ],
-        "earth": [
-            "size": 100, "distance": 1850, "speed": [
-                "rotation": 0.005, "translation": 1
-            ]
-        ]
+        ["name": "earth", "size": 800, "distance": 30, "rotation": 0.002, "translation": 3],
+        ["name": "earth", "size": 100, "distance": 1850, "rotation": 0.005, "translation": 1]
     ]
 }
 //------------------------------------------------------------------------------------------------------------------------
