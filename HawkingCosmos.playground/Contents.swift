@@ -23,25 +23,19 @@ class ViewController: NSViewController {
         scnView.isPlaying = true
         scnScene = GameScene()
         scnView.scene = scnScene
-    }
-    func setupCamera() {
         cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 0)
         scnScene.rootNode.addChildNode(cameraNode)
-    }
-    func setupPlanets() {
         for planet in Planets.init().info {
             let node = SCNNode()
             if let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat? {
                 node.position = SCNVector3(x: distance, y: 0, z: 0)
                 node.geometry = SCNSphere(radius: size)
-                node.geometry?.firstMaterial?.diffuse.contents = NSColor.white
+                node.geometry?.firstMaterial?.diffuse.contents = NSColor.blue
             }
             scnScene.rootNode.addChildNode(node)
         }
-    }
-    func setupRings() {
         for planet in Planets.init().info {
             let node = SCNNode()
             if let distance: CGFloat = planet["distance"] as! CGFloat? {
