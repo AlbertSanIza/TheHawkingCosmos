@@ -19,6 +19,7 @@ class ViewController: NSViewController {
         setupScene()
         setupCamera()
         setupPlanets()
+        setupRings()
     }
     func setupView() {
         scnView = self.view as! SCNView
@@ -41,6 +42,10 @@ class ViewController: NSViewController {
     func setupPlanets() {
         let earthNode = PlanetNode()
         scnScene.rootNode.addChildNode(earthNode)
+    }
+    func setupRings() {
+        let earthRingNode = RingNode()
+        scnScene.rootNode.addChildNode(earthRingNode)
     }
     override func keyUp(with event: NSEvent) {
     }
@@ -73,6 +78,17 @@ class PlanetNode: SCNNode {
         super.init()
         self.geometry = SCNSphere(radius: 10)
         self.geometry?.firstMaterial?.diffuse.contents = NSColor.blue
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
+class RingNode: SCNNode {
+    override public init() {
+        super.init()
+        self.geometry = SCNTorus(ringRadius: 100, pipeRadius: 0.05)
+        self.geometry?.firstMaterial?.diffuse.contents = NSColor.white
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
