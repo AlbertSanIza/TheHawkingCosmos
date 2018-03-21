@@ -63,6 +63,17 @@ class GameScene: SCNScene {
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
+class PlanetNode: SCNNode {
+    override public init() {
+        super.init()
+        self.geometry = SCNSphere(radius: 10)
+        self.geometry?.firstMaterial?.diffuse.contents = NSColor.blue
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
 public class SplashSceneFile: SKScene {
     override public func sceneDidLoad() {
         super.sceneDidLoad()
