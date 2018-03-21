@@ -46,7 +46,7 @@ class ViewController: NSViewController {
         for planet in planetsInfo {
             let ringNode = SCNNode()
             let planetNode = SCNNode()
-            if let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat? {
+            if let name: String = planet["name"] as! String?, let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let rotation: CGFloat = planet["rotation"] as! CGFloat?, let _: CGFloat = planet["translation"] as! CGFloat? {
                 ringNode.geometry = SCNTorus(ringRadius: distance, pipeRadius: 0.25)
                 ringNode.geometry?.firstMaterial?.diffuse.contents = NSColor.systemBlue
                 planetNode.position = SCNVector3(x: distance, y: 0, z: 0)
