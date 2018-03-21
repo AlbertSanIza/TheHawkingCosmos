@@ -13,6 +13,8 @@ class ViewController: NSViewController {
     var scnView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
+    var sunNode: SCNNode!
+    var earthNode: SCNNode!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -40,7 +42,9 @@ class ViewController: NSViewController {
         scnScene.rootNode.addChildNode(cameraNode)
     }
     func setupPlanets() {
-        let earthNode = PlanetNode()
+        sunNode = PlanetNode()
+        earthNode = PlanetNode()
+        scnScene.rootNode.addChildNode(sunNode)
         scnScene.rootNode.addChildNode(earthNode)
     }
     func setupRings() {
