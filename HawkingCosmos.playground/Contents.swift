@@ -41,8 +41,7 @@ class ViewController: NSViewController {
         cameraNode.position = SCNVector3(x: 0, y: 5000, z: 0)
 //        cameraNode.orientation = SCNQuaternion(x: 0.0, y: 0.0, z: 0.0, w: 0.0)
         scnScene.rootNode.addChildNode(cameraNode)
-        let stars = SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")
-        scnScene.rootNode.addParticleSystem(stars!)
+        scnScene.rootNode.addParticleSystem(SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")!)
         for planet in planetsInfo {
             let ringNode = SCNNode()
             let planetNode = SCNNode()
