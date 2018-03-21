@@ -238,8 +238,10 @@ public class sceneFiles {
 //------------------------------------------------------------------------------------------------------------------------
 public class Planets {
     public let info = [
-        ["name": "earth", "size": 800, "distance": 30, "rotation": 0.002, "translation": 3],
-        ["name": "earth", "size": 100, "distance": 1850, "rotation": 0.005, "translation": 1]
+        ["name": "sun", "size": 800.0, "distance": CGFloat(30.0), "rotation": 0.002, "translation": 3.0],
+        ["name": "mercury", "size": 50.0, "distance": CGFloat(1200.0), "rotation": 0.005, "translation": 1.607],
+        ["name": "venus", "size": 95.0, "distance": CGFloat(1450.0), "rotation": 0.005, "translation": 1.174],
+        ["name": "earth", "size": 100.0, "distance": CGFloat(1850.0), "rotation": 0.005, "translation": 1.0]
     ]
 }
 //------------------------------------------------------------------------------------------------------------------------
