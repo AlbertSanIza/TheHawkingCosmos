@@ -7,6 +7,7 @@ class ViewController: NSViewController {
     var scnView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
+    var lightNode: SCNNode!
     let planetsInfo = [
         ["name": "sun", "size": CGFloat(800.0), "distance": CGFloat(30.0), "rotation": 0.002, "translation": 3.0],
         ["name": "mercury", "size": CGFloat(50.0), "distance": CGFloat(1200.0), "rotation": 0.005, "translation": 1.607],
@@ -29,6 +30,11 @@ class ViewController: NSViewController {
         scnView.isPlaying = true
         scnScene = SCNScene()
         scnView.scene = scnScene
+        lightNode = SCNNode()
+        lightNode.light = SCNLight()
+        lightNode.light?.type = .omni
+        lightNode.position = SCNVector3(x: 0, y: 0, z: 0)
+        scnScene.rootNode.addChildNode(lightNode)
         cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         cameraNode.camera?.zFar = 21000
