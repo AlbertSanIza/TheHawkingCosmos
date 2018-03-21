@@ -18,6 +18,7 @@ class ViewController: NSViewController {
         setupView()
         setupScene()
         setupCamera()
+        setupPlanets()
     }
     func setupView() {
         scnView = self.view as! SCNView
@@ -36,6 +37,10 @@ class ViewController: NSViewController {
         cameraNode.camera = SCNCamera()
         cameraNode.position = SCNVector3(x: 0, y: 5, z: 10)
         scnScene.rootNode.addChildNode(cameraNode)
+    }
+    func setupPlanets() {
+        let earthNode = PlanetNode()
+        scnScene.rootNode.addChildNode(earthNode)
     }
     override func keyUp(with event: NSEvent) {
     }
