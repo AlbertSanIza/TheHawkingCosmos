@@ -21,12 +21,6 @@ class ViewController: NSViewController {
         scnView.allowsCameraControl = true
         scnView.delegate = self
         scnView.isPlaying = true
-        setupScene()
-        setupCamera()
-        setupPlanets()
-        setupRings()
-    }
-    func setupScene() {
         scnScene = GameScene()
         scnView.scene = scnScene
     }
