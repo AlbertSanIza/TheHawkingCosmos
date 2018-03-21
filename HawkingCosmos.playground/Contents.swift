@@ -151,20 +151,26 @@ let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
 //mainView.presentScene(splashScene)
 //PlaygroundPage.current.liveView = mainView
 //------------------------------------------------------------------------------------------------------------------------
+class GameScene: SCNScene {
+    let cameraNode: SCNNode = SCNNode()
+    override init() {
+        super.init()
+        cameraNode.camera = SCNCamera()
+        cameraNode.camera?.zFar = 300
+        rootNode.addChildNode(cameraNode)
+        let stars = SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")
+        rootNode.addParticleSystem(stars!)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 let mainView: SCNView = SCNView(frame: mainFrame)
-let gameScene: SCNScene = SCNScene()
-
-let cameraNode: SCNNode = SCNNode()
-cameraNode.camera = SCNCamera()
-cameraNode.camera?.zFar = 300
-gameScene.rootNode.addChildNode(cameraNode)
-
-let stars = SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")
-gameScene.rootNode.addParticleSystem(stars!)
-
-mainView.scene = gameScene
+mainView.scene = GameScene()
+mainView.delegate = MierdaCaca()
 mainView.showsStatistics = true
 mainView.backgroundColor = NSColor.black
 mainView.allowsCameraControl = true
 PlaygroundPage.current.liveView = mainView
 //------------------------------------------------------------------------------------------------------------------------
+
