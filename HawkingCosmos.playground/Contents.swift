@@ -13,9 +13,6 @@ class ViewController: NSViewController {
     var scnView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
-    var sunNode: SCNNode!
-    var mercuryNode: SCNNode!
-    var earthNode: SCNNode!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
