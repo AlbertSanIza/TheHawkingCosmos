@@ -38,7 +38,8 @@ class ViewController: NSViewController {
         cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         cameraNode.camera?.zFar = 21000
-        cameraNode.position = SCNVector3(x: 0, y: 2000, z: 0)
+        cameraNode.position = SCNVector3(x: 0, y: 5000, z: 0)
+//        cameraNode.orientation = SCNQuaternion(x: 0.0, y: 0.0, z: 0.0, w: 0.0)
         scnScene.rootNode.addChildNode(cameraNode)
         let stars = SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")
         scnScene.rootNode.addParticleSystem(stars!)
