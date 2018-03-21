@@ -17,6 +17,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         setupView()
         setupScene()
+        setupCamera()
     }
     func setupView() {
         scnView = self.view as! SCNView
