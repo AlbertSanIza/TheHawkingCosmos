@@ -40,8 +40,8 @@ class ViewController: NSViewController {
             let ringNode = SCNNode()
             let planetNode = SCNNode()
             if let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat? {
-                ringNode.geometry?.firstMaterial?.diffuse.contents = NSColor.blue
                 ringNode.geometry = SCNTorus(ringRadius: distance, pipeRadius: 0.25)
+                ringNode.geometry?.firstMaterial?.diffuse.contents = NSColor.systemBlue
                 planetNode.position = SCNVector3(x: distance, y: 0, z: 0)
                 planetNode.geometry = SCNSphere(radius: size)
                 planetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: (planet["name"] as! String) + "map")
