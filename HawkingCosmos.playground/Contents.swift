@@ -51,8 +51,13 @@ class ViewController: NSViewController {
         scnScene.rootNode.addChildNode(earthNode)
     }
     func setupRings() {
-        let earthRingNode = RingNode()
-        scnScene.rootNode.addChildNode(earthRingNode)
+        for planet in Planets.init().info {
+            let node = SCNNode()
+            if let size: CGFloat = planet["distance"] as! CGFloat? {
+                node.geometry = SCNTorus(ringRadius: size, pipeRadius: 0.08)
+            }
+            scnScene.rootNode.addChildNode(node)
+        }
     }
     override func keyUp(with event: NSEvent) {
     }
