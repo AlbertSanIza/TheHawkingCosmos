@@ -167,7 +167,6 @@ class GameScene: SCNScene {
 }
 let mainView: SCNView = SCNView(frame: mainFrame)
 mainView.scene = GameScene()
-mainView.delegate = MierdaCaca()
 mainView.showsStatistics = true
 mainView.backgroundColor = NSColor.black
 mainView.allowsCameraControl = true
