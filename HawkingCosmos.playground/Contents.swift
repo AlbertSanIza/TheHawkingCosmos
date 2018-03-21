@@ -32,7 +32,7 @@ class ViewController: NSViewController {
             if let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat? {
                 node.position = SCNVector3(x: distance, y: 0, z: 0)
                 node.geometry = SCNSphere(radius: size)
-                node.geometry?.firstMaterial?.diffuse.contents = NSColor.blue
+                node.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: (planet["name"] as! String) + "map")
             }
             scnScene.rootNode.addChildNode(node)
         }
