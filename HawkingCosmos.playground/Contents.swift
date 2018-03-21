@@ -5,6 +5,56 @@ import SpriteKit
 import Foundation
 import PlaygroundSupport
 //------------------------------------------------------------------------------------------------------------------------
+//let mainFrame = CGRect(x: 0, y: 0, width: 1024, height: 768)
+let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
+//let mainFrame = CGRect(x: 0, y: 0, width: 600, height: 450)
+//------------------------------------------------------------------------------------------------------------------------
+class ViewController: NSViewController {
+    var scnView: SCNView!
+    var scnScene: SCNScene!
+    var cameraNode: SCNNode!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+        setupScene()
+    }
+    func setupView() {
+        scnView = self.view as! SCNView
+        scnView.showsStatistics = true
+        scnView.backgroundColor = NSColor.black
+        scnView.allowsCameraControl = true
+    }
+    func setupScene() {
+        scnScene = GameScene()
+        scnView.scene = scnScene
+    }
+    func setupCamera() {
+        cameraNode = SCNNode()
+        cameraNode.camera = SCNCamera()
+        cameraNode.position = SCNVector3(x: 0, y: 5, z: 10)
+        scnScene.rootNode.addChildNode(cameraNode)
+    }
+    override func keyUp(with event: NSEvent) {
+    }
+    override func keyDown(with event: NSEvent) {
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
+class GameScene: SCNScene {
+    let cameraNode: SCNNode = SCNNode()
+    override init() {
+        super.init()
+        cameraNode.camera = SCNCamera()
+        cameraNode.camera?.zFar = 300
+        rootNode.addChildNode(cameraNode)
+        let stars = SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")
+        rootNode.addParticleSystem(stars!)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
 public class SplashSceneFile: SKScene {
     override public func sceneDidLoad() {
         super.sceneDidLoad()
@@ -139,9 +189,10 @@ public class sceneFiles {
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
-//let mainFrame = CGRect(x: 0, y: 0, width: 1024, height: 768)
-let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
-//let mainFrame = CGRect(x: 0, y: 0, width: 600, height: 450)
+let viewController = ViewController()
+viewController.view = SCNView(frame: mainFrame)
+viewController.viewDidLoad()
+PlaygroundPage.current.liveView = viewController.view
 //------------------------------------------------------------------------------------------------------------------------
 //let mainView = SKView(frame: mainFrame)
 //mainView.showsFPS = true
@@ -152,34 +203,3 @@ let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
 //mainView.presentScene(splashScene)
 //PlaygroundPage.current.liveView = mainView
 //------------------------------------------------------------------------------------------------------------------------
-class GameView: SCNView {
-}
-//------------------------------------------------------------------------------------------------------------------------
-extension GameView: SCNSceneRendererDelegate {
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-    }
-}
-//------------------------------------------------------------------------------------------------------------------------
-class GameScene: SCNScene {
-    let cameraNode: SCNNode = SCNNode()
-    override init() {
-        super.init()
-        cameraNode.camera = SCNCamera()
-        cameraNode.camera?.zFar = 300
-        rootNode.addChildNode(cameraNode)
-        let stars = SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")
-        rootNode.addParticleSystem(stars!)
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-//------------------------------------------------------------------------------------------------------------------------
-let mainView: SCNView = GameView(frame: mainFrame)
-mainView.scene = GameScene()
-mainView.showsStatistics = true
-mainView.backgroundColor = NSColor.black
-mainView.allowsCameraControl = true
-PlaygroundPage.current.liveView = mainView
-//------------------------------------------------------------------------------------------------------------------------
-
