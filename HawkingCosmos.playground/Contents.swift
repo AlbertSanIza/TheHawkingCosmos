@@ -151,6 +151,14 @@ let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
 //mainView.presentScene(splashScene)
 //PlaygroundPage.current.liveView = mainView
 //------------------------------------------------------------------------------------------------------------------------
+class GameView: SCNView {
+}
+//------------------------------------------------------------------------------------------------------------------------
+extension GameView: SCNSceneRendererDelegate {
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
 class GameScene: SCNScene {
     let cameraNode: SCNNode = SCNNode()
     override init() {
@@ -165,7 +173,8 @@ class GameScene: SCNScene {
         fatalError("init(coder:) has not been implemented")
     }
 }
-let mainView: SCNView = SCNView(frame: mainFrame)
+//------------------------------------------------------------------------------------------------------------------------
+let mainView: SCNView = GameView(frame: mainFrame)
 mainView.scene = GameScene()
 mainView.showsStatistics = true
 mainView.backgroundColor = NSColor.black
