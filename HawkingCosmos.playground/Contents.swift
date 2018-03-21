@@ -43,12 +43,15 @@ class ViewController: NSViewController {
         scnScene.rootNode.addChildNode(cameraNode)
     }
     func setupPlanets() {
-        sunNode = PlanetNode()
-        mercuryNode = PlanetNode()
-        earthNode = PlanetNode()
-        scnScene.rootNode.addChildNode(sunNode)
-        scnScene.rootNode.addChildNode(mercuryNode)
-        scnScene.rootNode.addChildNode(earthNode)
+        for planet in Planets.init().info {
+            let node = SCNNode()
+            if let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat? {
+                node.position = SCNVector3(x: distance, y: 0, z: 0)
+                node.geometry = SCNSphere(radius: size)
+                node.geometry?.firstMaterial?.diffuse.contents = NSColor.blue
+            }
+            scnScene.rootNode.addChildNode(node)
+        }
     }
     func setupRings() {
         for planet in Planets.init().info {
