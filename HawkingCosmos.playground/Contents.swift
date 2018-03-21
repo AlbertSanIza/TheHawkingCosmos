@@ -67,7 +67,7 @@ class GameScene: SCNScene {
     override init() {
         super.init()
         cameraNode.camera = SCNCamera()
-        cameraNode.camera?.zFar = 300
+        cameraNode.camera?.zFar = 16200
         rootNode.addChildNode(cameraNode)
         let stars = SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")
         rootNode.addParticleSystem(stars!)
