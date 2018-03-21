@@ -50,10 +50,6 @@ class ViewController: NSViewController {
             scnScene.rootNode.addChildNode(planetNode)
         }
     }
-    override func keyUp(with event: NSEvent) {
-    }
-    override func keyDown(with event: NSEvent) {
-    }
 }
 //------------------------------------------------------------------------------------------------------------------------
 extension ViewController: SCNSceneRendererDelegate {
