@@ -46,7 +46,7 @@ class ViewController: NSViewController {
                 planetNode.geometry = SCNSphere(radius: size)
                 planetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: (planet["name"] as! String) + "map")
             }
-            scnScene.rootNode.addChildNode(planetNode)
+            scnScene.rootNode.addChildNode(ringNode)
             scnScene.rootNode.addChildNode(planetNode)
         }
     }
