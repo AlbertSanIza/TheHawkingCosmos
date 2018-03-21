@@ -45,7 +45,7 @@ class ViewController: NSViewController {
             if let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat? {
                 node.position = SCNVector3(x: distance, y: 0, z: 0)
                 node.geometry = SCNSphere(radius: size)
-                node.geometry?.firstMaterial?.diffuse.contents = NSColor.blue
+                node.geometry?.firstMaterial?.diffuse.contents = NSColor.white
             }
             scnScene.rootNode.addChildNode(node)
         }
@@ -55,6 +55,7 @@ class ViewController: NSViewController {
             let node = SCNNode()
             if let distance: CGFloat = planet["distance"] as! CGFloat? {
                 node.geometry = SCNTorus(ringRadius: distance, pipeRadius: 0.08)
+                node.geometry?.firstMaterial?.diffuse.contents = NSColor.blue
             }
             scnScene.rootNode.addChildNode(node)
         }
