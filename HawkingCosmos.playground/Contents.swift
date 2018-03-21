@@ -1,3 +1,4 @@
+//------------------------------------------------------------------------------------------------------------------------
 import SceneKit
 import Foundation
 import PlaygroundSupport
@@ -26,12 +27,15 @@ class ViewController: NSViewController {
         scnView.allowsCameraControl = true
         scnView.delegate = self
         scnView.isPlaying = true
-        scnScene = GameScene()
+        scnScene = SCNScene()
         scnView.scene = scnScene
         cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 0)
+        cameraNode.camera?.zFar = 21000
+        cameraNode.position = SCNVector3(x: 0, y: 2000, z: 0)
         scnScene.rootNode.addChildNode(cameraNode)
+        let stars = SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")
+        scnScene.rootNode.addParticleSystem(stars!)
         for planet in planetsInfo {
             let ringNode = SCNNode()
             let planetNode = SCNNode()
@@ -57,21 +61,6 @@ extension ViewController: SCNSceneRendererDelegate {
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
-class GameScene: SCNScene {
-    let cameraNode: SCNNode = SCNNode()
-    override init() {
-        super.init()
-        cameraNode.camera = SCNCamera()
-        cameraNode.camera?.zFar = 21000
-        rootNode.addChildNode(cameraNode)
-        let stars = SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")
-        rootNode.addParticleSystem(stars!)
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-//------------------------------------------------------------------------------------------------------------------------
 //let mainFrame = CGRect(x: 0, y: 0, width: 1024, height: 768)
 //let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
 let mainFrame = CGRect(x: 0, y: 0, width: 600, height: 450)
@@ -79,4 +68,4 @@ let viewController = ViewController()
 viewController.view = SCNView(frame: mainFrame)
 viewController.viewDidLoad()
 PlaygroundPage.current.liveView = viewController.view
-
+//------------------------------------------------------------------------------------------------------------------------
