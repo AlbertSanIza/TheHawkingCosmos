@@ -228,6 +228,20 @@ public class sceneFiles {
         return sceneFile
     }
 }
+public class Planets {
+    public let info = [
+        "sun": [
+            "size": 800, "distance": 30, "speed": [
+                "rotation": 0.002, "translation": 3
+            ]
+        ],
+        "earth": [
+            "size": 100, "distance": 1850, "speed": [
+                "rotation": 0.005, "translation": 1
+            ]
+        ]
+    ]
+}
 //------------------------------------------------------------------------------------------------------------------------
 let viewController = ViewController()
 viewController.view = SCNView(frame: mainFrame)
