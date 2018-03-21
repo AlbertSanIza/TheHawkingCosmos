@@ -23,6 +23,8 @@ class ViewController: NSViewController {
         scnView.showsStatistics = true
         scnView.backgroundColor = NSColor.black
         scnView.allowsCameraControl = true
+        scnView.delegate = self
+        scnView.isPlaying = true
     }
     func setupScene() {
         scnScene = GameScene()
@@ -37,6 +39,11 @@ class ViewController: NSViewController {
     override func keyUp(with event: NSEvent) {
     }
     override func keyDown(with event: NSEvent) {
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
+extension ViewController: SCNSceneRendererDelegate {
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
