@@ -53,8 +53,8 @@ class ViewController: NSViewController {
     func setupRings() {
         for planet in Planets.init().info {
             let node = SCNNode()
-            if let size: CGFloat = planet["distance"] as! CGFloat? {
-                node.geometry = SCNTorus(ringRadius: size, pipeRadius: 0.08)
+            if let distance: CGFloat = planet["distance"] as! CGFloat? {
+                node.geometry = SCNTorus(ringRadius: distance, pipeRadius: 0.08)
             }
             scnScene.rootNode.addChildNode(node)
         }
