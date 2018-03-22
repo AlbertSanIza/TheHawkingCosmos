@@ -102,10 +102,9 @@ class ViewController: NSViewController {
         }
     }
     func checkOrientationAngles(rad: CGFloat) -> CGFloat {
-        let deg: CGFloat = (180.0 / .pi) * rad
-        if (deg > 359.9) {
+        if (rad > (2 * .pi)) {
             return 0
-        } else if (deg < 0) {
+        } else if (rad < 0) {
             return 2 * .pi
         }
         return rad
