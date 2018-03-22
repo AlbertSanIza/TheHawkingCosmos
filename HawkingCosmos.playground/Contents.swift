@@ -121,6 +121,13 @@ extension ViewController: SCNSceneRendererDelegate {
                 planetNode.eulerAngles.y += rotation
             }
         }
+        if spaceKey {
+            if let eulerAngles: SCNVector3 = cameraNode.eulerAngles {
+                cameraNode.position.z -= (cos(cameraNode.eulerAngles.x) * cos(cameraNode.eulerAngles.y)) * 10
+                cameraNode.position.y += sin(eulerAngles.x) * 5
+            }
+            
+        }
         if wKey {
             cameraNode.eulerAngles.x = checkOrientationAngles(rad: cameraNode.eulerAngles.x + 0.008)
         }
@@ -132,9 +139,6 @@ extension ViewController: SCNSceneRendererDelegate {
         }
         if dKey {
             cameraNode.eulerAngles.y = checkOrientationAngles(rad: cameraNode.eulerAngles.y - 0.008)
-        }
-        if spaceKey {
-            cameraNode.position.y += sin(cameraNode.eulerAngles.x) * 5
         }
     }
 }
