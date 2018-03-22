@@ -42,8 +42,7 @@ class ViewController: NSViewController {
         scnScene.rootNode.addParticleSystem(SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")!)
         for planet in planetsInfo {
             let ringNode = SCNNode()
-            let planetNode = SCNNode()
-            if let name: String = planet["name"] as! String?, let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let rotation: CGFloat = planet["rotation"] as! CGFloat?, let translation: CGFloat = planet["translation"] as! CGFloat? {
+            if let name: String = planet["name"] as! String?, let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let rotation: CGFloat = planet["rotation"] as! CGFloat?, let translation: CGFloat = planet["translation"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
                 ringNode.geometry = SCNTorus(ringRadius: distance, pipeRadius: 0.25)
                 ringNode.geometry?.firstMaterial?.diffuse.contents = NSColor.systemBlue
                 scnScene.rootNode.addChildNode(ringNode)
