@@ -46,13 +46,12 @@ class ViewController: NSViewController {
             if let name: String = planet["name"] as! String?, let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let rotation: CGFloat = planet["rotation"] as! CGFloat?, let translation: CGFloat = planet["translation"] as! CGFloat? {
                 ringNode.geometry = SCNTorus(ringRadius: distance, pipeRadius: 0.25)
                 ringNode.geometry?.firstMaterial?.diffuse.contents = NSColor.systemBlue
+                scnScene.rootNode.addChildNode(ringNode)
                 planetNode.position = SCNVector3(x: distance, y: 0, z: 0)
                 planetNode.geometry = SCNSphere(radius: size)
                 planetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: name + "map")
-                planetNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: rotation * 26, z: 0, duration: 1)))
+                scnScene.rootNode.addChildNode(planetNode)
             }
-            scnScene.rootNode.addChildNode(ringNode)
-            scnScene.rootNode.addChildNode(planetNode)
         }
     }
 }
