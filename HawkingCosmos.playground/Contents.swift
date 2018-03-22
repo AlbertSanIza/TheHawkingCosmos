@@ -134,6 +134,8 @@ extension ViewController: SCNSceneRendererDelegate {
             cameraNode.eulerAngles.y = checkOrientationAngles(rad: cameraNode.eulerAngles.y - 0.008)
         }
         if spaceKey {
+            cameraNode.position.z -= (cos(cameraNode.eulerAngles.x) * cos(cameraNode.eulerAngles.y)) * 10
+            cameraNode.position.x -= sin(cameraNode.eulerAngles.y) * 10
         }
     }
 }
