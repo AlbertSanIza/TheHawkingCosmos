@@ -101,6 +101,15 @@ class ViewController: NSViewController {
         default: break
         }
     }
+    func checkOrientationAngles(rad: CGFloat) -> CGFloat {
+        let deg: CGFloat = (180.0 / .pi) * rad
+        if (deg > 359.9) {
+            return 0
+        } else if (deg < 0) {
+            return 2 * .pi
+        }
+        return rad
+    }
 }
 //------------------------------------------------------------------------------------------------------------------------
 extension ViewController: SCNSceneRendererDelegate {
