@@ -42,6 +42,7 @@ class ViewController: NSViewController {
         lightNode.light = SCNLight()
         lightNode.light?.type = .omni
         lightNode.position = SCNVector3(x: 0, y: 0, z: 0)
+//        scnScene.rootNode.addChildNode(lightNode)
         cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         cameraNode.camera?.zFar = 21000
