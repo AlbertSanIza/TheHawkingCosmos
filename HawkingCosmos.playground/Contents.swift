@@ -33,7 +33,7 @@ class ViewController: NSViewController {
         scnView = self.view as! SCNView
         scnView.showsStatistics = true
         scnView.backgroundColor = NSColor.black
-        scnView.allowsCameraControl = false
+        scnView.allowsCameraControl = true
         scnView.delegate = self
         scnView.isPlaying = true
         scnScene = SCNScene()
