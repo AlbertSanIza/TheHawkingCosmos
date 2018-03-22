@@ -19,14 +19,14 @@ class ViewController: NSViewController {
     let planetsInfo = [
         ["name": "sun", "size": CGFloat(800.0), "distance": CGFloat(30.0), "rotation": CGFloat(0.002), "translation": CGFloat(3.0), "planetNode": SCNNode()],
         ["name": "mercury", "size": CGFloat(50.0), "distance": CGFloat(1200.0), "rotation": CGFloat(0.005), "translation": CGFloat(1.607), "planetNode": SCNNode()],
-        ["name": "venus", "size": CGFloat(95.0), "distance": CGFloat(1450.0), "rotation": CGFloat(0.005), "translation": CGFloat(1.174), "planetNode": SCNNode()],
+        ["name": "venus", "size": CGFloat(95.0), "distance": CGFloat(1450.0), "rotation": CGFloat(-0.005), "translation": CGFloat(1.174), "planetNode": SCNNode()],
         ["name": "earth", "size": CGFloat(100.0), "distance": CGFloat(1850.0), "rotation": CGFloat(0.005), "translation": CGFloat(1.0), "planetNode": SCNNode()],
         ["name": "mars", "size": CGFloat(60.0), "distance": CGFloat(2200.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.802), "planetNode": SCNNode()],
         ["name": "jupiter", "size": CGFloat(500.0), "distance": CGFloat(2850.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.434), "planetNode": SCNNode()],
         ["name": "saturn", "size": CGFloat(400.0), "distance": CGFloat(4050.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.323), "planetNode": SCNNode()],
-        ["name": "uranus", "size": CGFloat(200.0), "distance": CGFloat(5000.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.228), "planetNode": SCNNode()],
+        ["name": "uranus", "size": CGFloat(200.0), "distance": CGFloat(5000.0), "rotation": CGFloat(-0.005), "translation": CGFloat(0.228), "planetNode": SCNNode()],
         ["name": "neptune", "size": CGFloat(180.0), "distance": CGFloat(5550.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.182), "planetNode": SCNNode()],
-        ["name": "pluto", "size": CGFloat(90.0), "distance": CGFloat(5900.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.159), "planetNode": SCNNode()]
+        ["name": "pluto", "size": CGFloat(90.0), "distance": CGFloat(5900.0), "rotation": CGFloat(-0.005), "translation": CGFloat(0.159), "planetNode": SCNNode()]
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
