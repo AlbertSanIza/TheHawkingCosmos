@@ -15,7 +15,7 @@ class ViewController: NSViewController {
     var spaceKey: Bool = false
     var t: CGFloat = 100.0 * CGFloat(drand48())
     var tChangeRate: CGFloat = 0.0015
-    var planetsSpeed: CGFloat = 2
+    var planetsSpeed: CGFloat = 1
     let planetsInfo = [
         ["name": "sun", "size": CGFloat(800.0), "distance": CGFloat(30.0), "rotation": CGFloat(0.002), "translation": CGFloat(3.0), "planetNode": SCNNode()],
         ["name": "mercury", "size": CGFloat(50.0), "distance": CGFloat(1200.0), "rotation": CGFloat(0.005), "translation": CGFloat(1.607), "planetNode": SCNNode()],
