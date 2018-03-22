@@ -117,8 +117,8 @@ extension ViewController: SCNSceneRendererDelegate {
         t += tChangeRate
         for planet in planetsInfo {
             if let distance: CGFloat = planet["distance"] as! CGFloat?, let rotation: CGFloat = planet["rotation"] as! CGFloat?, let translation: CGFloat = planet["translation"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
-                planetNode.position.x = distance * CGFloat(cos(t * translation * planetsSpeed))
-                planetNode.position.z = distance * CGFloat(sin(t * translation * planetsSpeed))
+                planetNode.position.x = distance * cos(t * translation * planetsSpeed)
+                planetNode.position.z = distance * sin(t * translation * planetsSpeed)
                 planetNode.eulerAngles.y += rotation
             }
         }
