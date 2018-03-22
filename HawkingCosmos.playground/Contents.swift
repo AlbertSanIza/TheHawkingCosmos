@@ -123,10 +123,10 @@ extension ViewController: SCNSceneRendererDelegate {
         }
         if spaceKey {
             if let eulerAngles: SCNVector3 = cameraNode.eulerAngles {
-                cameraNode.position.z -= (cos(cameraNode.eulerAngles.x) * cos(cameraNode.eulerAngles.y)) * 10
+                cameraNode.position.x -= sin(eulerAngles.y) * 5
                 cameraNode.position.y += sin(eulerAngles.x) * 5
+                cameraNode.position.z -= cos(eulerAngles.y) * 5
             }
-            
         }
         if wKey {
             cameraNode.eulerAngles.x = checkOrientationAngles(rad: cameraNode.eulerAngles.x + 0.008)
