@@ -58,6 +58,46 @@ class ViewController: NSViewController {
             }
         }
     }
+    override func keyDown(with event: NSEvent) {
+        switch event.keyCode {
+        case 13:
+            if !wKey {
+                wKey = true
+            }
+        case 1:
+            if !sKey {
+                sKey = true
+            }
+        case 0:
+            if !aKey {
+                aKey = true
+            }
+        case 2:
+            if !dKey {
+                dKey = true
+            }
+        case 49:
+            if !spaceKey {
+                spaceKey = true
+            }
+        default: break
+        }
+    }
+    override func keyUp(with event: NSEvent) {
+        switch event.keyCode {
+        case 13:
+            wKey = false
+        case 1:
+            sKey = false
+        case 0:
+            aKey = false
+        case 2:
+            dKey = false
+        case 49:
+            spaceKey = false
+        default: break
+        }
+    }
 }
 //------------------------------------------------------------------------------------------------------------------------
 extension ViewController: SCNSceneRendererDelegate {
