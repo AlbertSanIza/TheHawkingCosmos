@@ -42,7 +42,7 @@ class ViewController: NSViewController {
         cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         cameraNode.camera?.zFar = 21000
-        cameraNode.position = SCNVector3(x: 0, y: 5000, z: 0)
+        cameraNode.position = SCNVector3(x: 0, y: 400, z: 1000)
         scnScene.rootNode.addChildNode(cameraNode)
         scnScene.rootNode.addParticleSystem(SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")!)
         for planet in planetsInfo {
