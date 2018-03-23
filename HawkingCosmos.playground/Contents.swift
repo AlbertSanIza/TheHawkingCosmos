@@ -8,6 +8,7 @@ class ViewController: NSViewController {
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
     var lightNode: SCNNode!
+    var starsNode: SCNNode!
     var wKey: Bool = false
     var sKey: Bool = false
     var aKey: Bool = false
@@ -16,7 +17,6 @@ class ViewController: NSViewController {
     var t: CGFloat = 100.0 * CGFloat(drand48())
     var tChangeRate: CGFloat = 0.0015
     var planetsSpeed: CGFloat = 1
-    var starsNode: SCNNode!
     let planetsInfo = [
         ["name": "sun", "size": CGFloat(1000.0), "distance": CGFloat(0.0), "rotation": CGFloat(0.002), "translation": CGFloat(3.0), "planetNode": SCNNode()],
         ["name": "mercury", "size": CGFloat(50.0), "distance": CGFloat(1400.0), "rotation": CGFloat(0.005), "translation": CGFloat(1.607), "planetNode": SCNNode()],
