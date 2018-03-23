@@ -52,7 +52,7 @@ class ViewController: NSViewController {
         scnScene.rootNode.addChildNode(cameraNode)
         scnScene.rootNode.addParticleSystem(SCNParticleSystem(named: "starsParticle", inDirectory: "/")!)
         starsNode = SCNNode()
-        starsNode.geometry = SCNSphere(radius: 10100)
+        starsNode.geometry = SCNSphere(radius: 12200)
         starsNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: "stars")
         starsNode.geometry?.firstMaterial?.isDoubleSided = true
         scnScene.rootNode.addChildNode(starsNode)
