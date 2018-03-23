@@ -65,6 +65,9 @@ class ViewController: NSViewController {
                 planetNode.position = SCNVector3(x: distance, y: 0, z: 0)
                 planetNode.geometry = SCNSphere(radius: size)
                 planetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: name)
+                if (name == "sun") {
+                    planetNode.addParticleSystem(SCNParticleSystem(named: "sparksParticle", inDirectory: "/")!)
+                }
                 scnScene.rootNode.addChildNode(planetNode)
             }
         }
