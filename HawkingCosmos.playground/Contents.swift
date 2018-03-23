@@ -132,7 +132,7 @@ extension ViewController: SCNSceneRendererDelegate {
             }
         }
         if spaceKey {
-            cameraNode.simdPosition += cameraNode.simdWorldFront * 5
+            cameraNode.simdPosition += cameraNode.simdWorldFront * 7
         }
         if wKey {
             cameraNode.eulerAngles.x = checkOrientationAngles(rad: cameraNode.eulerAngles.x + 0.004)
