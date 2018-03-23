@@ -16,6 +16,7 @@ class ViewController: NSViewController {
     var t: CGFloat = 100.0 * CGFloat(drand48())
     var tChangeRate: CGFloat = 0.0015
     var planetsSpeed: CGFloat = 1
+    var starsNode: SCNNode!
     let planetsInfo = [
         ["name": "sun", "size": CGFloat(800.0), "distance": CGFloat(30.0), "rotation": CGFloat(0.002), "translation": CGFloat(3.0), "planetNode": SCNNode()],
         ["name": "mercury", "size": CGFloat(50.0), "distance": CGFloat(1200.0), "rotation": CGFloat(0.005), "translation": CGFloat(1.607), "planetNode": SCNNode()],
@@ -50,6 +51,11 @@ class ViewController: NSViewController {
         cameraNode.position = SCNVector3(x: 0, y: 1500, z: 0)
         scnScene.rootNode.addChildNode(cameraNode)
         scnScene.rootNode.addParticleSystem(SCNParticleSystem(named: "starsParticle", inDirectory: "particles/stars/")!)
+        starsNode = SCNNode()
+        starsNode.geometry = SCNSphere(radius: 10100)
+        starsNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: "stars")
+        starsNode.geometry?.firstMaterial?.isDoubleSided = true
+        scnScene.rootNode.addChildNode(starsNode)
         for planet in planetsInfo {
             let ringNode = SCNNode()
             if let name: String = planet["name"] as! String?, let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
@@ -116,6 +122,8 @@ class ViewController: NSViewController {
 extension ViewController: SCNSceneRendererDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         t += tChangeRate
+        starsNode.eulerAngles.y += 0.0001
+        starsNode.eulerAngles.z += 0.0001
         for planet in planetsInfo {
             if let distance: CGFloat = planet["distance"] as! CGFloat?, let rotation: CGFloat = planet["rotation"] as! CGFloat?, let translation: CGFloat = planet["translation"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
                 planetNode.position.x = distance * cos(t * translation * planetsSpeed)
