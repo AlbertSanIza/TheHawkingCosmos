@@ -13,7 +13,8 @@ class ViewController: NSViewController {
     var sKey: Bool = false
     var aKey: Bool = false
     var dKey: Bool = false
-    var spaceKey: Bool = false
+    var oKey: Bool = false
+    var lKey: Bool = false
     var t: CGFloat = 100.0 * CGFloat(drand48())
     var tChangeRate: CGFloat = 0.0015
     var planetsSpeed: CGFloat = 1
@@ -92,9 +93,13 @@ class ViewController: NSViewController {
             if !dKey {
                 dKey = true
             }
-        case 49:
-            if !spaceKey {
-                spaceKey = true
+        case 31:
+            if !oKey {
+                oKey = true
+            }
+        case 37:
+            if !lKey {
+                lKey = true
             }
         default: break
         }
@@ -109,8 +114,10 @@ class ViewController: NSViewController {
             aKey = false
         case 2:
             dKey = false
-        case 49:
-            spaceKey = false
+        case 31:
+            oKey = false
+        case 37:
+            lKey = false
         default: break
         }
     }
@@ -136,8 +143,11 @@ extension ViewController: SCNSceneRendererDelegate {
                 planetNode.eulerAngles.y += rotation
             }
         }
-        if spaceKey {
-            cameraNode.simdPosition += cameraNode.simdWorldFront * 7
+        if oKey {
+            cameraNode.simdPosition += cameraNode.simdWorldFront * 10
+        }
+        if lKey {
+            cameraNode.simdPosition -= cameraNode.simdWorldFront * 5
         }
         if wKey {
             cameraNode.eulerAngles.x = checkOrientationAngles(rad: cameraNode.eulerAngles.x + 0.004)
