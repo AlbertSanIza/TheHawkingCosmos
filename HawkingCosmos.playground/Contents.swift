@@ -7,8 +7,7 @@ class ViewController: NSViewController {
     var scnView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
-    var lightAmbientNode: SCNNode!
-    var lightOmniNode: SCNNode!
+    var lightNode: SCNNode!
     var wKey: Bool = false
     var sKey: Bool = false
     var aKey: Bool = false
