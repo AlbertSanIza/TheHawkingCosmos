@@ -4,12 +4,6 @@ import SpriteKit
 import Foundation
 import PlaygroundSupport
 //------------------------------------------------------------------------------------------------------------------------
-public class SplashScene: SKScene {
-    override public func sceneDidLoad() {
-        super.sceneDidLoad()
-    }
-}
-//------------------------------------------------------------------------------------------------------------------------
 class ViewController: NSViewController {
     var scnView: SCNView!
     var scnScene: SCNScene!
@@ -167,6 +161,12 @@ extension ViewController: SCNSceneRendererDelegate {
         if dKey {
             cameraNode.eulerAngles.y = checkOrientationAngles(rad: cameraNode.eulerAngles.y - 0.01)
         }
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
+public class SplashScene: SKScene {
+    override public func sceneDidLoad() {
+        super.sceneDidLoad()
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
