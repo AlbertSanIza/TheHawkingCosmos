@@ -7,7 +7,8 @@ class ViewController: NSViewController {
     var scnView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
-    var lightNode: SCNNode!
+    var lightAmbientNode: SCNNode!
+    var lightOmniNode: SCNNode!
     var wKey: Bool = false
     var sKey: Bool = false
     var aKey: Bool = false
@@ -150,8 +151,8 @@ extension ViewController: SCNSceneRendererDelegate {
 }
 //------------------------------------------------------------------------------------------------------------------------
 //let mainFrame = CGRect(x: 0, y: 0, width: 1024, height: 768)
-//let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
-let mainFrame = CGRect(x: 0, y: 0, width: 600, height: 450)
+let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
+//let mainFrame = CGRect(x: 0, y: 0, width: 600, height: 450)
 let viewController = ViewController()
 viewController.view = SCNView(frame: mainFrame)
 viewController.viewDidLoad()
