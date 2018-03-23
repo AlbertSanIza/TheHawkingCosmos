@@ -16,8 +16,7 @@ class ViewController: NSViewController {
     var oKey: Bool = false
     var lKey: Bool = false
     var t: CGFloat = 100.0 * CGFloat(drand48())
-    var tChangeRate: CGFloat = 0.0015
-    var planetsSpeed: CGFloat = 1
+    var planetsSpeed: CGFloat = 2
     let planetsInfo = [
         ["name": "sun", "size": CGFloat(1000.0), "distance": CGFloat(0.0), "rotation": CGFloat(0.002), "translation": CGFloat(3.0), "planetNode": SCNNode()],
         ["name": "mercury", "size": CGFloat(50.0), "distance": CGFloat(1400.0), "rotation": CGFloat(0.005), "translation": CGFloat(1.607), "planetNode": SCNNode()],
@@ -133,7 +132,7 @@ class ViewController: NSViewController {
 //------------------------------------------------------------------------------------------------------------------------
 extension ViewController: SCNSceneRendererDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        t += tChangeRate
+        t += 0.0015
         starsNode.eulerAngles.y += 0.0001
         starsNode.eulerAngles.z += 0.0001
         for planet in planetsInfo {
