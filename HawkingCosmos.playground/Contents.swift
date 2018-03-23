@@ -4,6 +4,12 @@ import SpriteKit
 import Foundation
 import PlaygroundSupport
 //------------------------------------------------------------------------------------------------------------------------
+public class SplashScene: SKScene {
+    override public func sceneDidLoad() {
+        super.sceneDidLoad()
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
 class ViewController: NSViewController {
     var scnView: SCNView!
     var scnScene: SCNScene!
