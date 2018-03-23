@@ -170,6 +170,15 @@ public class SplashScene: SKScene {
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
+public class MainScene: SCNScene {
+    override public init() {
+        super.init()
+    }
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
 //let mainFrame = CGRect(x: 0, y: 0, width: 1024, height: 768)
 //let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
 let mainFrame = CGRect(x: 0, y: 0, width: 600, height: 450)
