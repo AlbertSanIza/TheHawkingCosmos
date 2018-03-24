@@ -219,6 +219,26 @@ extension Notification.Name {
     static let toViewController = Notification.Name("toViewController")
 }
 //------------------------------------------------------------------------------------------------------------------------
+public class sceneFiles {
+    public func show(Scene: String) -> SKScene {
+        let sceneFile: SKScene
+        switch Scene {
+        case "splash":
+            sceneFile = SplashScene(fileNamed: "splashScene")!
+        case "mainMenu":
+            sceneFile = SplashScene(fileNamed: "mainMenuScene")!
+        case "instructions":
+            sceneFile = SplashScene(fileNamed: "instructionsScene")!
+        case "about":
+            sceneFile = SplashScene(fileNamed: "aboutScene")!
+        default:
+            sceneFile = SplashScene(fileNamed: "splashScene")!
+        }
+        sceneFile.scaleMode = .aspectFit
+        return sceneFile
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
 //let mainFrame = CGRect(x: 0, y: 0, width: 1024, height: 768)
 //let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
 let mainFrame = CGRect(x: 0, y: 0, width: 600, height: 450)
