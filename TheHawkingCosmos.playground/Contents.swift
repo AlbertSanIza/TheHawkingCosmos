@@ -174,6 +174,7 @@ extension ViewController: SCNSceneRendererDelegate {
 }
 //------------------------------------------------------------------------------------------------------------------------
 public class OverlayScene: SKScene {
+    let nc = NotificationCenter.default
     var txtTitle: SKLabelNode!
     var txtSubTitle: SKLabelNode!
     var txtStart: SKLabelNode!
@@ -194,26 +195,32 @@ public class OverlayScene: SKScene {
         case 13:
             if !wKey {
                 wKey = true
+                nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  false])
             }
         case 1:
             if !sKey {
                 sKey = true
+                nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  false])
             }
         case 0:
             if !aKey {
                 aKey = true
+                nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  false])
             }
         case 2:
             if !dKey {
                 dKey = true
+                nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  false])
             }
         case 31:
             if !oKey {
                 oKey = true
+                nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  false])
             }
         case 37:
             if !lKey {
                 lKey = true
+                nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  false])
             }
         default: break
         }
@@ -222,16 +229,22 @@ public class OverlayScene: SKScene {
         switch event.keyCode {
         case 13:
             wKey = false
+            nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  false])
         case 1:
             sKey = false
+            nc.post(name: .toViewController, object: nil, userInfo: ["sKey":  false])
         case 0:
             aKey = false
+            nc.post(name: .toViewController, object: nil, userInfo: ["aKey":  false])
         case 2:
             dKey = false
+            nc.post(name: .toViewController, object: nil, userInfo: ["dKey":  false])
         case 31:
             oKey = false
+            nc.post(name: .toViewController, object: nil, userInfo: ["oKey":  false])
         case 37:
             lKey = false
+            nc.post(name: .toViewController, object: nil, userInfo: ["lKey":  false])
         default: break
         }
     }
