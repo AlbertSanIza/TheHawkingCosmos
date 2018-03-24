@@ -8,7 +8,6 @@ class ViewController: NSViewController {
     let nc = NotificationCenter.default
     var scnView: SCNView!
     var scnScene: SCNScene!
-    var skScene: SKScene!
     var cameraNode: SCNNode!
     var lightNode: SCNNode!
     var starsNode: SCNNode!
@@ -41,9 +40,6 @@ class ViewController: NSViewController {
         scnView.allowsCameraControl = false
         scnView.delegate = self
         scnView.isPlaying = true
-        skScene = OverlayScene(fileNamed: "overlayScene")!
-        skScene.scaleMode = .aspectFit
-        scnView.overlaySKScene = skScene
         scnScene = SCNScene()
         scnView.scene = scnScene
         lightNode = SCNNode()
