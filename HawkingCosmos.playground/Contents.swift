@@ -7,6 +7,7 @@ import PlaygroundSupport
 class ViewController: NSViewController {
     var scnView: SCNView!
     var scnScene: SCNScene!
+    var skScene: SKScene!
     var cameraNode: SCNNode!
     var lightNode: SCNNode!
     var starsNode: SCNNode!
@@ -39,6 +40,9 @@ class ViewController: NSViewController {
         scnView.allowsCameraControl = false
         scnView.delegate = self
         scnView.isPlaying = true
+        skScene = OverlayScene(fileNamed: "overlayScene")!
+        skScene.scaleMode = .aspectFit
+        scnView.overlaySKScene = skScene
         scnScene = SCNScene()
         scnView.scene = scnScene
         lightNode = SCNNode()
@@ -164,7 +168,7 @@ extension ViewController: SCNSceneRendererDelegate {
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
-public class SplashScene: SKScene {
+public class OverlayScene: SKScene {
     override public func sceneDidLoad() {
         super.sceneDidLoad()
     }
