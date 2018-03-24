@@ -236,6 +236,9 @@ public class OverlayScene: SKScene {
         }
     }
 }
+extension Notification.Name {
+    static let toViewController = Notification.Name("toViewController")
+}
 //------------------------------------------------------------------------------------------------------------------------
 //let mainFrame = CGRect(x: 0, y: 0, width: 1024, height: 768)
 let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
