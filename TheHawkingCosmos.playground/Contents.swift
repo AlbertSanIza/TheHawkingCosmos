@@ -90,7 +90,19 @@ class ViewController: NSViewController {
         return rad
     }
     @objc func toViewControllerNotification(_ notification: NSNotification) {
-        print(notification)
+        if let boolValue: Bool = notification.userInfo?["wKey"] as? Bool {
+            wKey = boolValue
+        } else if let boolValue: Bool = notification.userInfo?["sKey"] as? Bool {
+            sKey = boolValue
+        } else if let boolValue: Bool = notification.userInfo?["aKey"] as? Bool {
+            aKey = boolValue
+        } else if let boolValue: Bool = notification.userInfo?["dKey"] as? Bool {
+            dKey = boolValue
+        } else if let boolValue: Bool = notification.userInfo?["oKey"] as? Bool {
+            oKey = boolValue
+        } else if let boolValue: Bool = notification.userInfo?["lKey"] as? Bool {
+            lKey = boolValue
+        }
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
