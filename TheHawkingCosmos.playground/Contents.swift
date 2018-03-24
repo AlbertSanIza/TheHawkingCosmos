@@ -5,6 +5,7 @@ import Foundation
 import PlaygroundSupport
 //------------------------------------------------------------------------------------------------------------------------
 class ViewController: NSViewController {
+    let nc = NotificationCenter.default
     var scnView: SCNView!
     var scnScene: SCNScene!
     var skScene: SKScene!
@@ -78,6 +79,7 @@ class ViewController: NSViewController {
                 scnScene.rootNode.addChildNode(planetNode)
             }
         }
+        nc.addObserver(self, selector: #selector(toViewControllerNotification(_:)), name: .toViewController, object: nil)
     }
     override func keyDown(with event: NSEvent) {
         switch event.keyCode {
@@ -132,6 +134,9 @@ class ViewController: NSViewController {
             return 2 * .pi
         }
         return rad
+    }
+    @objc func toViewControllerNotification(_ notification: NSNotification) {
+        print(notification)
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
