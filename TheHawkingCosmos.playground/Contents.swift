@@ -200,27 +200,27 @@ public class OverlayScene: SKScene {
         case 1:
             if !sKey {
                 sKey = true
-                nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  true])
+                nc.post(name: .toViewController, object: nil, userInfo: ["sKey":  true])
             }
         case 0:
             if !aKey {
                 aKey = true
-                nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  true])
+                nc.post(name: .toViewController, object: nil, userInfo: ["aKey":  true])
             }
         case 2:
             if !dKey {
                 dKey = true
-                nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  true])
+                nc.post(name: .toViewController, object: nil, userInfo: ["dKey":  true])
             }
         case 31:
             if !oKey {
                 oKey = true
-                nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  true])
+                nc.post(name: .toViewController, object: nil, userInfo: ["oKey":  true])
             }
         case 37:
             if !lKey {
                 lKey = true
-                nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  true])
+                nc.post(name: .toViewController, object: nil, userInfo: ["lKey":  true])
             }
         default: break
         }
