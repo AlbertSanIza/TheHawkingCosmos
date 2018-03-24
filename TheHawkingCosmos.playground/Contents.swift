@@ -169,8 +169,66 @@ extension ViewController: SCNSceneRendererDelegate {
 }
 //------------------------------------------------------------------------------------------------------------------------
 public class OverlayScene: SKScene {
+    var txtTitle: SKLabelNode!
+    var txtSubTitle: SKLabelNode!
+    var txtStart: SKLabelNode!
+    var wKey: Bool = false
+    var sKey: Bool = false
+    var aKey: Bool = false
+    var dKey: Bool = false
+    var oKey: Bool = false
+    var lKey: Bool = false
     override public func sceneDidLoad() {
         super.sceneDidLoad()
+        txtTitle = childNode(withName: "txtTitle") as! SKLabelNode?
+        txtSubTitle = childNode(withName: "txtSubTitle") as! SKLabelNode?
+        txtStart = childNode(withName: "txtStart") as! SKLabelNode?
+    }
+    public override func keyDown(with event: NSEvent) {
+        switch event.keyCode {
+        case 13:
+            if !wKey {
+                wKey = true
+            }
+        case 1:
+            if !sKey {
+                sKey = true
+            }
+        case 0:
+            if !aKey {
+                aKey = true
+            }
+        case 2:
+            if !dKey {
+                dKey = true
+            }
+        case 31:
+            if !oKey {
+                oKey = true
+            }
+        case 37:
+            if !lKey {
+                lKey = true
+            }
+        default: break
+        }
+    }
+    public override func keyUp(with event: NSEvent) {
+        switch event.keyCode {
+        case 13:
+            wKey = false
+        case 1:
+            sKey = false
+        case 0:
+            aKey = false
+        case 2:
+            dKey = false
+        case 31:
+            oKey = false
+        case 37:
+            lKey = false
+        default: break
+        }
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
