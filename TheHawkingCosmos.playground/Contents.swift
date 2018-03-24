@@ -175,8 +175,8 @@ public class OverlayScene: SKScene {
 }
 //------------------------------------------------------------------------------------------------------------------------
 //let mainFrame = CGRect(x: 0, y: 0, width: 1024, height: 768)
-//let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
-let mainFrame = CGRect(x: 0, y: 0, width: 600, height: 450)
+let mainFrame = CGRect(x: 0, y: 0, width: 800, height: 600)
+//let mainFrame = CGRect(x: 0, y: 0, width: 600, height: 450)
 let viewController = ViewController()
 viewController.view = SCNView(frame: mainFrame)
 viewController.viewDidLoad()
