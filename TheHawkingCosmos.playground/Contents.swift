@@ -155,6 +155,8 @@ public class SplashScene: SKScene {
         if (splashSceneStatus) {
             splashSceneStatus = false
             txtTitle.isHidden = true
+            txtSubTitle.isHidden = true
+            txtStart.isHidden = true
             nc.post(name: .toViewController, object: nil, userInfo: ["splashSceneStatus":  false])
         }
     }
