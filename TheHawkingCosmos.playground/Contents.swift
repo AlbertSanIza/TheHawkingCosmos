@@ -42,6 +42,7 @@ class ViewController: NSViewController {
         scnView.isPlaying = true
         scnScene = SCNScene()
         scnView.scene = scnScene
+        scnView.overlaySKScene = sceneFiles.init().show(Scene: "splash")
         lightNode = SCNNode()
         lightNode.light = SCNLight()
         lightNode.light?.type = .omni
