@@ -96,6 +96,12 @@ class ViewController: NSViewController {
             cameraNode.runAction(SCNAction.move(to: SCNVector3(x: 0, y: 2500, z: 11000), duration: 1)) {
                 self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "mainMenu")
             }
+        } else if let _: Bool = notification.userInfo?["gotoStartScene"] as? Bool {
+            self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "start")
+        } else if let _: Bool = notification.userInfo?["gotoInstructionsScene"] as? Bool {
+            self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "instructions")
+        } else if let _: Bool = notification.userInfo?["gotoAboutScene"] as? Bool {
+            self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "about")
         }
     }
 }
