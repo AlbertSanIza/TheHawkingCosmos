@@ -159,9 +159,9 @@ public class SplashScene: SKScene {
     public override func keyUp(with event: NSEvent) {
         if (splashSceneStatus) {
             splashSceneStatus = false
-            txtTitle.isHidden = true
-            txtSubTitle.isHidden = true
-            txtStart.isHidden = true
+            txtTitle.removeFromParent()
+            txtSubTitle.removeFromParent()
+            txtStart.removeFromParent()
             nc.post(name: .toViewController, object: nil, userInfo: ["gotoMainMenuScene":  true])
         }
     }
