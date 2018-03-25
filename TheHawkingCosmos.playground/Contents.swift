@@ -89,19 +89,25 @@ class ViewController: NSViewController {
         } else if let boolValue: Bool = notification.userInfo?["lKey"] as? Bool {
             lKey = boolValue
         } else if let _: Bool = notification.userInfo?["gotoSplashScene"] as? Bool {
-            cameraNode.runAction(SCNAction.move(to: SCNVector3(x: 0, y: 0, z: 18500), duration: 1)) {
+            cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 0, z: 18500), duration: 1), SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)])) {
                 self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "splash")
             }
         } else if let _: Bool = notification.userInfo?["gotoMainMenuScene"] as? Bool {
-            cameraNode.runAction(SCNAction.move(to: SCNVector3(x: 0, y: 2500, z: 11000), duration: 1)) {
+            cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 2500, z: 11000), duration: 1), SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)])) {
                 self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "mainMenu")
             }
         } else if let _: Bool = notification.userInfo?["gotoStartScene"] as? Bool {
-            self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "start")
+            cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 11000, z: 0), duration: 1), SCNAction.rotateTo(x: -(.pi / 2), y: 0, z: 0, duration: 1)])) {
+                self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "start")
+            }
         } else if let _: Bool = notification.userInfo?["gotoInstructionsScene"] as? Bool {
-            self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "instructions")
+            cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 1000, z: -4500), duration: 1), SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)])) {
+                self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "instructions")
+            }
         } else if let _: Bool = notification.userInfo?["gotoAboutScene"] as? Bool {
-            self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "about")
+            cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 950, z: 1000), duration: 1), SCNAction.rotateTo(x: 0.3, y: 0, z: 0, duration: 1)])) {
+                self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "about")
+            }
         }
     }
 }
