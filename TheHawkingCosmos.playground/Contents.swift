@@ -163,7 +163,6 @@ public class MainMenuScene: SKScene {
     var txtStart: SKLabelNode!
     var txtInstructions: SKLabelNode!
     var txtAbout: SKLabelNode!
-    var mainMenuStatus: Bool = true
     override public func sceneDidLoad() {
         super.sceneDidLoad()
         txtBack = childNode(withName: "txtBack") as! SKLabelNode?
