@@ -152,9 +152,6 @@ public class SplashScene: SKScene {
         txtSubTitle = childNode(withName: "txtSubTitle") as! SKLabelNode?
         txtStart = childNode(withName: "txtStart") as! SKLabelNode?
     }
-    public override func keyDown(with event: NSEvent) {
-        nc.post(name: .toViewController, object: nil, userInfo: ["gotoMainMenu":  false])
-    }
     public override func keyUp(with event: NSEvent) {
         if (splashSceneStatus) {
             splashSceneStatus = false
