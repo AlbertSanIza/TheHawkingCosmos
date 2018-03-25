@@ -103,8 +103,8 @@ class ViewController: NSViewController {
             cameraNode.runAction(SCNAction.move(to: SCNVector3(x: 0, y: 0, z: 18500), duration: 1)) {
                 self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "splash")
             }
-        } else if let _: Bool = notification.userInfo?["splashSceneStatus"] as? Bool {
-            cameraNode.runAction(SCNAction.move(to: SCNVector3(x: 0, y: 2000, z: 11000), duration: 1)) {
+        } else if let _: Bool = notification.userInfo?["gotoMainMenuScene"] as? Bool {
+            cameraNode.runAction(SCNAction.move(to: SCNVector3(x: 0, y: 2500, z: 11000), duration: 1)) {
                 self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "mainMenu")
             }
         }
@@ -162,7 +162,7 @@ public class SplashScene: SKScene {
             txtTitle.isHidden = true
             txtSubTitle.isHidden = true
             txtStart.isHidden = true
-            nc.post(name: .toViewController, object: nil, userInfo: ["splashSceneStatus":  false])
+            nc.post(name: .toViewController, object: nil, userInfo: ["gotoMainMenuScene":  true])
         }
     }
 }
