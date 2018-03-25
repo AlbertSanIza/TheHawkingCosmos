@@ -167,6 +167,24 @@ public class SplashScene: SKScene {
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
+public class MainMenuScene: SKScene {
+    let nc = NotificationCenter.default
+    var txtBack: SKLabelNode!
+    var txtTitle: SKLabelNode!
+    var txtStart: SKLabelNode!
+    var txtInstructions: SKLabelNode!
+    var txtAbout: SKLabelNode!
+    var mainMenuStatus: Bool = true
+    override public func sceneDidLoad() {
+        super.sceneDidLoad()
+        txtBack = childNode(withName: "txtBack") as! SKLabelNode?
+        txtTitle = childNode(withName: "txtTitle") as! SKLabelNode?
+        txtStart = childNode(withName: "txtStart") as! SKLabelNode?
+        txtInstructions = childNode(withName: "txtInstructions") as! SKLabelNode?
+        txtAbout = childNode(withName: "txtAbout") as! SKLabelNode?
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------
 public class OverlayScene: SKScene {
     let nc = NotificationCenter.default
     var txtTitle: SKLabelNode!
