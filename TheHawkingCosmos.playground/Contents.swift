@@ -9,7 +9,6 @@ class ViewController: NSViewController {
     var scnView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
-    var lightNode: SCNNode!
     var starsNode: SCNNode!
     var wKey: Bool = false
     var sKey: Bool = false
@@ -43,11 +42,6 @@ class ViewController: NSViewController {
         scnScene = SCNScene()
         scnView.scene = scnScene
         scnView.overlaySKScene = sceneFiles.init().show(Scene: "splash")
-        lightNode = SCNNode()
-        lightNode.light = SCNLight()
-        lightNode.light?.type = .omni
-        lightNode.position = SCNVector3(x: 0, y: 0, z: 0)
-//        scnScene.rootNode.addChildNode(lightNode)
         cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         cameraNode.camera?.zFar = 26000
