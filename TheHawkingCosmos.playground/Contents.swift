@@ -73,12 +73,7 @@ class ViewController: NSViewController {
         nc.addObserver(self, selector: #selector(toViewControllerNotification(_:)), name: .toViewController, object: nil)
     }
     func checkOrientationAngles(rad: CGFloat) -> CGFloat {
-        if (rad > (2 * .pi)) {
-            return 0
-        } else if (rad < 0) {
-            return 2 * .pi
-        }
-        return rad
+        return rad > (2 * .pi) ? 0 : (rad < 0 ? 2 * .pi : rad)
     }
     @objc func toViewControllerNotification(_ notification: NSNotification) {
         if let boolValue: Bool = notification.userInfo?["wKey"] as? Bool {
