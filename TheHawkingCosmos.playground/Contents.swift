@@ -101,7 +101,7 @@ class ViewController: NSViewController {
             lKey = boolValue
         } else if let _: Bool = notification.userInfo?["splashSceneStatus"] as? Bool {
             cameraNode.runAction(SCNAction.move(to: SCNVector3(x: 0, y: 2000, z: 11000), duration: 1)) {
-                self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "splash")
+                self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "mainMenu")
             }
         }
     }
