@@ -158,6 +158,7 @@ public class SplashScene: SKScene {
 //------------------------------------------------------------------------------------------------------------------------
 public class MainMenuScene: SKScene {
     let nc = NotificationCenter.default
+    var mainMenuSceneStatus: Bool = true
     var txtBack: SKLabelNode!
     var txtTitle: SKLabelNode!
     var txtStart: SKLabelNode!
