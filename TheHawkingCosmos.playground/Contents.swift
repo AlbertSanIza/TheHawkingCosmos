@@ -254,7 +254,7 @@ public class sceneFiles {
         case "splash":
             sceneFile = SplashScene(fileNamed: "splashScene")!
         case "mainMenu":
-            sceneFile = SplashScene(fileNamed: "mainMenuScene")!
+            sceneFile = MainMenuScene(fileNamed: "mainMenuScene")!
         case "instructions":
             sceneFile = SplashScene(fileNamed: "instructionsScene")!
         case "about":
