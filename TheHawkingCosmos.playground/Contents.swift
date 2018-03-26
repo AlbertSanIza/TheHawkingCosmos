@@ -539,10 +539,6 @@ public class OverlayScene: SKScene {
     }
 }
 //------------------------------------------------------------------------------------------------------------------------
-extension Notification.Name {
-    static let toViewController = Notification.Name("toViewController")
-}
-//------------------------------------------------------------------------------------------------------------------------
 public class sceneFiles {
     public func show(Scene: String) -> SKScene {
         let sceneFile: SKScene
