@@ -264,12 +264,13 @@ public class StartScene: SKScene {
         case "txtPluto":
             showInfo(Title: "Pluto", Nickname: "The Dwarf Planet", Radius: "1,186 km", Distance: "5.91 billion km", Gravity: "0.6 m/s²", Orbital: "248 years")
         case "txtTop":
+            nodeInfo.isHidden = true
             nc.post(name: .toViewController, object: nil, userInfo: ["cameraWatch": "Top"])
         default: break
         }
-        nodeInfo.isHidden = withName == "txtTop"
     }
     func showInfo(Title: String, Nickname: String, Radius: String, Distance: String, Gravity: String, Orbital: String) {
+        nodeInfo.isHidden = false
         txtTitle.text = Title
         txtNickname.text = "\"" + Nickname + "\""
         txtRadiusString.text = Radius
