@@ -335,6 +335,7 @@ public class StartScene: SKScene {
         txtDistanceString.text = Distance
         txtGravityString.text = Gravity
         txtOrbitalString.text = Orbital
+        nc.post(name: .toViewController, object: nil, userInfo: [Title: true])
     }
     func finalRemoveAnd(goto: String) {
         startSceneStatus = false
