@@ -42,7 +42,7 @@ class ViewController: NSViewController {
         scnView.isPlaying = true
         scnScene = SCNScene()
         scnView.scene = scnScene
-        scnView.overlaySKScene = SceneFiles.init().show(Scene: "splash")
+        scnView.overlaySKScene = SceneFiles().show(Scene: "splash")
         cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         cameraNode.camera?.zFar = 26000
@@ -103,12 +103,12 @@ class ViewController: NSViewController {
             lKey = boolValue
         } else if let _: Bool = notification.userInfo?["gotoSplashScene"] as? Bool {
             cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 0, z: 18500), duration: 1), SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)])) {
-                self.scnView.overlaySKScene = SceneFiles.init().show(Scene: "splash")
+                self.scnView.overlaySKScene = SceneFiles().show(Scene: "splash")
             }
         } else if let _: Bool = notification.userInfo?["gotoMainMenuScene"] as? Bool {
             cameraWatch = ""
             cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 2500, z: 11000), duration: 1), SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)])) {
-                self.scnView.overlaySKScene = SceneFiles.init().show(Scene: "mainMenu")
+                self.scnView.overlaySKScene = SceneFiles().show(Scene: "mainMenu")
             }
         } else if let _: Bool = notification.userInfo?["gotoStartScene"] as? Bool {
             cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 12000, z: -400), duration: 1), SCNAction.rotateTo(x: -(.pi / 2), y: 0, z: 0, duration: 1)])) {
@@ -116,11 +116,11 @@ class ViewController: NSViewController {
             }
         } else if let _: Bool = notification.userInfo?["gotoInstructionsScene"] as? Bool {
             cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 1000, z: -4500), duration: 1), SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)])) {
-                self.scnView.overlaySKScene = SceneFiles.init().show(Scene: "instructions")
+                self.scnView.overlaySKScene = SceneFiles().show(Scene: "instructions")
             }
         } else if let _: Bool = notification.userInfo?["gotoAboutScene"] as? Bool {
             cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 950, z: 1000), duration: 1), SCNAction.rotateTo(x: 0.3, y: 0, z: 0, duration: 1)])) {
-                self.scnView.overlaySKScene = SceneFiles.init().show(Scene: "about")
+                self.scnView.overlaySKScene = SceneFiles().show(Scene: "about")
             }
         } else if let CameraWatch: String = notification.userInfo?["cameraWatch"] as? String {
             cameraWatch = CameraWatch == "Top" ? "" : CameraWatch.lowercased()
