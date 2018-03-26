@@ -11,7 +11,7 @@ public class SceneFiles {
         case "mainMenu":
             sceneFile = MainMenuScene(fileNamed: "mainMenuScene")!
         case "start":
-            sceneFile = StartScene(fileNamed: "startScene")!
+            sceneFile = SplashScene(fileNamed: "startScene")!
         case "instructions":
             sceneFile = InstructionsScene(fileNamed: "instructionsScene")!
         case "about":
