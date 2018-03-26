@@ -330,6 +330,11 @@ public class StartScene: SKScene {
     }
     func showInfo(Title: String, Nickname: String, Radius: String, Distance: String, Gravity: String, Orbital: String) {
         txtTitle.text = Title
+        txtNickname.text = "\"" + Nickname + "\""
+        txtRadiusString.text = Radius
+        txtDistanceString.text = Distance
+        txtGravityString.text = Gravity
+        txtOrbitalString.text = Orbital
     }
     func finalRemoveAnd(goto: String) {
         startSceneStatus = false
