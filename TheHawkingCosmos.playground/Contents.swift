@@ -58,7 +58,7 @@ class ViewController: NSViewController {
             let ringNode = SCNNode()
             if let name: String = planet["name"] as! String?, let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
                 let torus = SCNTorus(ringRadius: distance, pipeRadius: 1)
-                torus.ringSegmentCount = 58
+                torus.ringSegmentCount = 70
                 ringNode.geometry = torus
                 ringNode.geometry?.firstMaterial?.diffuse.contents = NSColor.systemBlue
                 scnScene.rootNode.addChildNode(ringNode)
