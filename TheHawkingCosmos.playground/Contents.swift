@@ -109,7 +109,7 @@ class ViewController: NSViewController {
                 self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "mainMenu")
             }
         } else if let _: Bool = notification.userInfo?["gotoStartScene"] as? Bool {
-            cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 11000, z: 0), duration: 1), SCNAction.rotateTo(x: -(.pi / 2), y: 0, z: 0, duration: 1)])) {
+            cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 12000, z: -400), duration: 1), SCNAction.rotateTo(x: -(.pi / 2), y: 0, z: 0, duration: 1)])) {
                 self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "start")
             }
         } else if let _: Bool = notification.userInfo?["gotoInstructionsScene"] as? Bool {
