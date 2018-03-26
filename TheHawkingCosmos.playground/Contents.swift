@@ -123,7 +123,7 @@ class ViewController: NSViewController {
             }
         } else if let CameraWatch: String = notification.userInfo?["cameraWatch"] as? String {
             cameraWatch = CameraWatch == "Top" ? "" : CameraWatch.lowercased()
-            if (cameraWatch == "Top") {
+            if (cameraWatch == "top") {
                 cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 12000, z: -400), duration: 1), SCNAction.rotateTo(x: -(.pi / 2), y: 0, z: 0, duration: 1)]))
             }
         }
