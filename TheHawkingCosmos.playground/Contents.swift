@@ -121,6 +121,11 @@ class ViewController: NSViewController {
             cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 950, z: 1000), duration: 1), SCNAction.rotateTo(x: 0.3, y: 0, z: 0, duration: 1)])) {
                 self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "about")
             }
+        } else if let CameraWatch: String = notification.userInfo?["cameraWatch"] as? String {
+            cameraWatch = CameraWatch == "Top" ? "" : CameraWatch.lowercased()
+            if (cameraWatch == "Top") {
+                cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 12000, z: -400), duration: 1), SCNAction.rotateTo(x: -(.pi / 2), y: 0, z: 0, duration: 1)]))
+            }
         }
     }
 }
