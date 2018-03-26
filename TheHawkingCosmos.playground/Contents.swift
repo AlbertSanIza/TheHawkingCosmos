@@ -311,6 +311,7 @@ public class StartScene: SKScene {
         txtNeptune.removeFromParent()
         txtPluto.removeFromParent()
         txtTop.removeFromParent()
+        nodeInfo.removeFromParent()
         nc.post(name: .toViewController, object: nil, userInfo: [goto: true])
     }
 }
