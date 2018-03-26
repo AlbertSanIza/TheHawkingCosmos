@@ -130,10 +130,19 @@ extension ViewController: SCNSceneRendererDelegate {
         starsNode.eulerAngles.y += 0.0001
         starsNode.eulerAngles.z += 0.0001
         for planet in planetsInfo {
-            if let distance: CGFloat = planet["distance"] as! CGFloat?, let rotation: CGFloat = planet["rotation"] as! CGFloat?, let translation: CGFloat = planet["translation"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
+            if let name: String = planet["name"] as! String?, let distance: CGFloat = planet["distance"] as! CGFloat?, let rotation: CGFloat = planet["rotation"] as! CGFloat?, let translation: CGFloat = planet["translation"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
                 planetNode.position.x = distance * cos(t * translation * planetsSpeed)
                 planetNode.position.z = distance * sin(t * translation * planetsSpeed)
                 planetNode.eulerAngles.y += rotation
+                if (name == "earth") {
+                    if let subDistance: CGFloat = earthMoonInfo["distance"] as! CGFloat?, let subRotation: CGFloat = earthMoonInfo["rotation"] as! CGFloat?, let subTranslation: CGFloat = earthMoonInfo["translation"] as! CGFloat?, let subPlanetNode: SCNNode = earthMoonInfo["planetNode"] as! SCNNode?, let subRingNode: SCNNode = earthMoonInfo["ringNode"] as! SCNNode? {
+                        subRingNode.position.x = planetNode.position.x
+                        subRingNode.position.z = planetNode.position.z
+                        subPlanetNode.position.x = planetNode.position.x + (subDistance * cos(t * subTranslation * planetsSpeed))
+                        subPlanetNode.position.z = planetNode.position.z + (subDistance * sin(t * subTranslation * planetsSpeed))
+                        subPlanetNode.eulerAngles.y += subRotation
+                    }
+                }
             }
         }
         if oKey {
