@@ -259,6 +259,11 @@ public class StartScene: SKScene {
     var txtTop: SKLabelNode!
     var nodeInfo: SKNode!
     var txtTitle: SKLabelNode!
+    var txtNickname: SKLabelNode!
+    var txtRadiusString: SKLabelNode!
+    var txtDistanceString: SKLabelNode!
+    var txtGravityString: SKLabelNode!
+    var txtOrbitalString: SKLabelNode!
     override public func sceneDidLoad() {
         super.sceneDidLoad()
         txtBack = childNode(withName: "txtBack") as! SKLabelNode?
@@ -276,6 +281,11 @@ public class StartScene: SKScene {
         nodeInfo = childNode(withName: "nodeInfo") as SKNode?
         nodeInfo.isHidden = true
         txtTitle = nodeInfo.childNode(withName: "txtTitle") as! SKLabelNode?
+        txtNickname = nodeInfo.childNode(withName: "txtNickname") as! SKLabelNode?
+        txtRadiusString = nodeInfo.childNode(withName: "txtRadiusString") as! SKLabelNode?
+        txtDistanceString = nodeInfo.childNode(withName: "txtDistanceString") as! SKLabelNode?
+        txtGravityString = nodeInfo.childNode(withName: "txtGravityString") as! SKLabelNode?
+        txtOrbitalString = nodeInfo.childNode(withName: "txtOrbitalString") as! SKLabelNode?
     }
     override public func keyUp(with event: NSEvent) {
         if (startSceneStatus) {
