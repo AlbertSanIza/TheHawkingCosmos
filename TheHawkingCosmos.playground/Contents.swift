@@ -246,11 +246,31 @@ public class StartScene: SKScene {
     let nc = NotificationCenter.default
     var startSceneStatus: Bool = true
     var txtBack: SKLabelNode!
-    var txtTitle: SKLabelNode!
+    var txtSun: SKLabelNode!
+    var txtMercury: SKLabelNode!
+    var txtVenus: SKLabelNode!
+    var txtEarth: SKLabelNode!
+    var txtMars: SKLabelNode!
+    var txtJupiter: SKLabelNode!
+    var txtSaturn: SKLabelNode!
+    var txtUranus: SKLabelNode!
+    var txtNeptune: SKLabelNode!
+    var txtPluto: SKLabelNode!
+    var txtTop: SKLabelNode!
     override public func sceneDidLoad() {
         super.sceneDidLoad()
         txtBack = childNode(withName: "txtBack") as! SKLabelNode?
-        txtTitle = childNode(withName: "txtTitle") as! SKLabelNode?
+        txtSun = childNode(withName: "txtSun") as! SKLabelNode?
+        txtMercury = childNode(withName: "txtMercury") as! SKLabelNode?
+        txtVenus = childNode(withName: "txtVenus") as! SKLabelNode?
+        txtEarth = childNode(withName: "txtEarth") as! SKLabelNode?
+        txtMars = childNode(withName: "txtMars") as! SKLabelNode?
+        txtJupiter = childNode(withName: "txtJupiter") as! SKLabelNode?
+        txtSaturn = childNode(withName: "txtSaturn") as! SKLabelNode?
+        txtUranus = childNode(withName: "txtUranus") as! SKLabelNode?
+        txtNeptune = childNode(withName: "txtNeptune") as! SKLabelNode?
+        txtPluto = childNode(withName: "txtPluto") as! SKLabelNode?
+        txtTop = childNode(withName: "txtTop") as! SKLabelNode?
     }
     override public func keyUp(with event: NSEvent) {
         if (startSceneStatus) {
@@ -275,7 +295,17 @@ public class StartScene: SKScene {
     func finalRemoveAnd(goto: String) {
         startSceneStatus = false
         txtBack.removeFromParent()
-        txtTitle.removeFromParent()
+        txtSun.removeFromParent()
+        txtMercury.removeFromParent()
+        txtVenus.removeFromParent()
+        txtEarth.removeFromParent()
+        txtMars.removeFromParent()
+        txtJupiter.removeFromParent()
+        txtSaturn.removeFromParent()
+        txtUranus.removeFromParent()
+        txtNeptune.removeFromParent()
+        txtPluto.removeFromParent()
+        txtTop.removeFromParent()
         nc.post(name: .toViewController, object: nil, userInfo: [goto: true])
     }
 }
