@@ -295,7 +295,7 @@ public class StartScene: SKScene {
         case "txtBack", "53", "11":
             finalRemoveAnd(goto: "gotoMainMenuScene")
         case "txtSun":
-            showInfo(Title: "Sun", Nickname: "\"The King of the Sky\"", Radius: "695,700 km", Distance: "0 km", Gravity: "274 m/s²", Orbital: "-----")
+            showInfo(Title: "Sun", Nickname: "\"The King of the Sky\"", Radius: "695,700 km", Distance: "-----", Gravity: "274 m/s²", Orbital: "-----")
         case "txtMercury":
             showInfo(Title: "Mercury", Nickname: "\"Hermes\"", Radius: "2,440 km", Distance: "57.91 million km", Gravity: "3.7 m/s²", Orbital: "88 days")
         case "txtVenus":
