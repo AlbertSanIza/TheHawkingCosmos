@@ -66,6 +66,18 @@ class ViewController: NSViewController {
                 planetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: name)
                 if (name == "sun") {
                     planetNode.addParticleSystem(SCNParticleSystem(named: "sparksParticle", inDirectory: "/")!)
+                } else if (name == "earth") {
+                    if let subName: String = earthMoonInfo["name"] as! String?, let subSize: CGFloat = earthMoonInfo["size"] as! CGFloat?, let subDistance: CGFloat = earthMoonInfo["distance"] as! CGFloat?, let subPlanetNode: SCNNode = earthMoonInfo["planetNode"] as! SCNNode?, let subRingNode: SCNNode = earthMoonInfo["ringNode"] as! SCNNode? {
+                        let subTorus = SCNTorus(ringRadius: subDistance, pipeRadius: 1)
+                        subTorus.ringSegmentCount = 58
+                        subRingNode.geometry = subTorus
+                        subRingNode.geometry?.firstMaterial?.diffuse.contents = NSColor.systemBlue
+                        scnScene.rootNode.addChildNode(subRingNode)
+                        subPlanetNode.position = SCNVector3(x: subDistance, y: 0, z: 0)
+                        subPlanetNode.geometry = SCNSphere(radius: subSize)
+                        subPlanetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: subName)
+                        scnScene.rootNode.addChildNode(subPlanetNode)
+                    }
                 }
                 scnScene.rootNode.addChildNode(planetNode)
             }
