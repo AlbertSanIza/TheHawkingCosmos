@@ -106,6 +106,7 @@ class ViewController: NSViewController {
                 self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "splash")
             }
         } else if let _: Bool = notification.userInfo?["gotoMainMenuScene"] as? Bool {
+            cameraWatch = ""
             cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 2500, z: 11000), duration: 1), SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)])) {
                 self.scnView.overlaySKScene = sceneFiles.init().show(Scene: "mainMenu")
             }
