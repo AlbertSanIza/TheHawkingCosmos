@@ -10,7 +10,6 @@ class ViewController: NSViewController {
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
     var starsNode: SCNNode!
-    var movePlanets: Bool = false
     var wKey: Bool = false
     var sKey: Bool = false
     var aKey: Bool = false
