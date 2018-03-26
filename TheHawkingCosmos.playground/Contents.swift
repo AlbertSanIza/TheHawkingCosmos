@@ -340,7 +340,7 @@ public class StartScene: SKScene {
         case "txtPluto":
             showInfo(Title: "Pluto", Nickname: "The Dwarf Planet", Radius: "1,186 km", Distance: "5.91 billion km", Gravity: "0.6 m/s²", Orbital: "248 years")
         case "txtTop":
-            nc.post(name: .toViewController, object: nil, userInfo: ["Top": true])
+            nc.post(name: .toViewController, object: nil, userInfo: ["cameraWatch": "Top"])
         default: break
         }
         nodeInfo.isHidden = withName == "txtTop"
