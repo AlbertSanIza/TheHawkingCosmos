@@ -151,9 +151,7 @@ extension ViewController: SCNSceneRendererDelegate {
                     }
                 }
                 if (name == cameraWatch) {
-                    cameraNode.rotation.x = -(.pi / 4)
-                    cameraNode.rotation.y = 0
-                    cameraNode.rotation.z = 0
+                    cameraNode.eulerAngles.x = -.pi / 4
                     cameraNode.position.x = planetNode.position.x - ((size * 2) / 3)
                     cameraNode.position.y = planetNode.position.y + size * 2
                     cameraNode.position.z = planetNode.position.z + size * 2
