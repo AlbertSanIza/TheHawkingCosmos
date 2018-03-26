@@ -257,6 +257,8 @@ public class StartScene: SKScene {
     var txtNeptune: SKLabelNode!
     var txtPluto: SKLabelNode!
     var txtTop: SKLabelNode!
+    var nodeInfo: SKNode!
+    var txtTitle: SKLabelNode!
     override public func sceneDidLoad() {
         super.sceneDidLoad()
         txtBack = childNode(withName: "txtBack") as! SKLabelNode?
@@ -271,6 +273,9 @@ public class StartScene: SKScene {
         txtNeptune = childNode(withName: "txtNeptune") as! SKLabelNode?
         txtPluto = childNode(withName: "txtPluto") as! SKLabelNode?
         txtTop = childNode(withName: "txtTop") as! SKLabelNode?
+        nodeInfo = childNode(withName: "nodeInfo") as SKNode?
+        nodeInfo.isHidden = true
+        txtTitle = nodeInfo.childNode(withName: "txtTitle") as! SKLabelNode?
     }
     override public func keyUp(with event: NSEvent) {
         if (startSceneStatus) {
