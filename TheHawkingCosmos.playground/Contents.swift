@@ -65,8 +65,9 @@ class ViewController: NSViewController {
         for planet in planetsInfo {
             if let name: String = planet["name"] as! String?, let radius: CGFloat = planet["radius"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
                 scnScene.rootNode.addChildNode(createRing(distance: distance))
-                planetNode.position = SCNVector3(x: distance, y: 0, z: 0)
-                planetNode.geometry = SCNSphere(radius: radius)
+                let sphere = SCNSphere(radius: radius)
+                sphere.segmentCount = 70
+                planetNode.geometry = sphere
                 planetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: name)
                 planetNode.geometry?.firstMaterial?.diffuse.intensity = 1.5
                 if (name == "sun") {
