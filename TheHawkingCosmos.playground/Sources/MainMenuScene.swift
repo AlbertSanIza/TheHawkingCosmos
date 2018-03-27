@@ -5,18 +5,10 @@ import Foundation
 public class MainMenuScene: SKScene {
     let nc = NotificationCenter.default
     var mainMenuSceneStatus: Bool = true
-    var txtBack: SKLabelNode!
-    var txtTitle: SKLabelNode!
-    var txtStart: SKLabelNode!
-    var txtInstructions: SKLabelNode!
-    var txtAbout: SKLabelNode!
+    var allNode: SKNode!
     override public func sceneDidLoad() {
         super.sceneDidLoad()
-        txtBack = childNode(withName: "txtBack") as! SKLabelNode?
-        txtTitle = childNode(withName: "txtTitle") as! SKLabelNode?
-        txtStart = childNode(withName: "txtStart") as! SKLabelNode?
-        txtInstructions = childNode(withName: "txtInstructions") as! SKLabelNode?
-        txtAbout = childNode(withName: "txtAbout") as! SKLabelNode?
+        allNode = childNode(withName: "allNode") as SKNode?
     }
     override public func keyUp(with event: NSEvent) {
         if (mainMenuSceneStatus) {
@@ -46,11 +38,7 @@ public class MainMenuScene: SKScene {
     }
     func finalRemoveAnd(goto: String) {
         mainMenuSceneStatus = false
-        txtBack.removeFromParent()
-        txtTitle.removeFromParent()
-        txtStart.removeFromParent()
-        txtInstructions.removeFromParent()
-        txtAbout.removeFromParent()
+        allNode.removeFromParent()
         nc.post(name: .toViewController, object: nil, userInfo: [goto: true])
     }
 }
