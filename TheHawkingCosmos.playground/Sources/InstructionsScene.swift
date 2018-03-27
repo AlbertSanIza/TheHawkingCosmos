@@ -5,12 +5,10 @@ import Foundation
 public class InstructionsScene: SKScene {
     let nc = NotificationCenter.default
     var instructionsSceneStatus: Bool = true
-    var txtBack: SKLabelNode!
-    var txtTitle: SKLabelNode!
+    var allNode: SKNode!
     override public func sceneDidLoad() {
         super.sceneDidLoad()
-        txtBack = childNode(withName: "txtBack") as! SKLabelNode?
-        txtTitle = childNode(withName: "txtTitle") as! SKLabelNode?
+        allNode = childNode(withName: "allNode") as SKNode?
     }
     override public func keyUp(with event: NSEvent) {
         if (instructionsSceneStatus) {
@@ -34,8 +32,7 @@ public class InstructionsScene: SKScene {
     }
     func finalRemoveAnd(goto: String) {
         instructionsSceneStatus = false
-        txtBack.removeFromParent()
-        txtTitle.removeFromParent()
+        allNode.removeFromParent()
         nc.post(name: .toViewController, object: nil, userInfo: [goto: true])
     }
 }
