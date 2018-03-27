@@ -89,11 +89,10 @@ class ViewController: NSViewController {
                         scnScene.rootNode.addChildNode(subPlanetNode)
                     }
                 } else if (name == "saturn") {
-                    saturnRing = SCNNode()
-                    saturnRing.eulerAngles.x = 0.2
-                    saturnRing.geometry = SCNTube(innerRadius: 410, outerRadius: 600, height: 2)
-                    saturnRing.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: "saturnRing")
-                    planetNode.addChildNode(saturnRing)
+                    let loopNode = SCNNode(geometry: SCNBox(width: 1600, height: 1900, length: 0, chamferRadius: 0))
+                    loopNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: "saturnRing")
+                    loopNode.rotation = SCNVector4(-0.5, -0.05, 0, 5)
+                    planetNode.addChildNode(loopNode)
                 }
                 scnScene.rootNode.addChildNode(planetNode)
             }
