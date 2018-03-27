@@ -162,10 +162,6 @@ extension ViewController: SCNSceneRendererDelegate {
                         subPlanetNode.position.z = planetNode.position.z + (subDistance * sin(t * subTranslation * planetsSpeed))
                         subPlanetNode.eulerAngles.y += subRotation
                     }
-                } else if (name == "saturn") {
-                    saturnRing.eulerAngles.y += rotation
-                    saturnRing.position.x = planetNode.position.x
-                    saturnRing.position.z = planetNode.position.z
                 }
                 if (name == cameraWatch) {
                     cameraNode.eulerAngles.x = -.pi / 7
