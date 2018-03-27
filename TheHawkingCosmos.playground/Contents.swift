@@ -64,6 +64,7 @@ class ViewController: NSViewController {
         starsNode.geometry = SCNSphere(radius: 12200)
         starsNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: "stars")
         starsNode.geometry?.firstMaterial?.isDoubleSided = true
+        starsNode.geometry?.firstMaterial?.diffuse.intensity = 2
         scnScene.rootNode.addChildNode(starsNode)
         for planet in planetsInfo {
             let ringNode = SCNNode()
