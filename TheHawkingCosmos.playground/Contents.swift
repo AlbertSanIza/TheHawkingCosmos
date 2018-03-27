@@ -31,7 +31,7 @@ class ViewController: NSViewController {
         ["name": "neptune", "size": CGFloat(180.0), "distance": CGFloat(5750.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.182), "planetNode": SCNNode()],
         ["name": "pluto", "size": CGFloat(90.0), "distance": CGFloat(6100.0), "rotation": CGFloat(-0.005), "translation": CGFloat(0.159), "planetNode": SCNNode()]
     ]
-    let earthMoonInfo: [String: Any?] = ["name": "earthMoon", "size": CGFloat(30.0), "distance": CGFloat(200.0), "rotation": CGFloat(0.005), "translation": CGFloat(10.0), "planetNode": SCNNode(), "ringNode": SCNNode()]
+    let earthMoonInfo: [String: Any?] = ["name": "earthMoon", "size": CGFloat(30.0), "distance": CGFloat(200.0), "rotation": CGFloat(0.005), "translation": CGFloat(10.0), "planetNode": SCNNode()]
     override func viewDidLoad() {
         super.viewDidLoad()
         scnView = self.view as! SCNView
@@ -67,13 +67,8 @@ class ViewController: NSViewController {
                 planetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: name)
                 if (name == "sun") {
                     planetNode.addParticleSystem(SCNParticleSystem(named: "sparksParticle", inDirectory: "/")!)
-                } else if (name == "earth") {
-                    if let subName: String = earthMoonInfo["name"] as! String?, let subSize: CGFloat = earthMoonInfo["size"] as! CGFloat?, let subDistance: CGFloat = earthMoonInfo["distance"] as! CGFloat?, let subPlanetNode: SCNNode = earthMoonInfo["planetNode"] as! SCNNode?, let subRingNode: SCNNode = earthMoonInfo["ringNode"] as! SCNNode? {
-                        let subTorus = SCNTorus(ringRadius: subDistance, pipeRadius: 1)
-                        subTorus.ringSegmentCount = 58
-                        subRingNode.geometry = subTorus
-                        subRingNode.geometry?.firstMaterial?.diffuse.contents = NSColor.systemBlue
-                        scnScene.rootNode.addChildNode(subRingNode)
+                } else if name == "earth" {
+                    if let subName: String = earthMoonInfo["name"] as! String?, let subSize: CGFloat = earthMoonInfo["size"] as! CGFloat?, let subDistance: CGFloat = earthMoonInfo["distance"] as! CGFloat?, let subPlanetNode: SCNNode = earthMoonInfo["planetNode"] as! SCNNode? {
                         subPlanetNode.position = SCNVector3(x: subDistance, y: 0, z: 0)
                         subPlanetNode.geometry = SCNSphere(radius: subSize)
                         subPlanetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: subName)
