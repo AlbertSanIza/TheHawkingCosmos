@@ -32,6 +32,7 @@ class ViewController: NSViewController {
         ["name": "pluto", "size": CGFloat(90.0), "distance": CGFloat(6100.0), "rotation": CGFloat(-0.005), "translation": CGFloat(0.159), "planetNode": SCNNode()]
     ]
     let earthMoonInfo: [String: Any?] = ["name": "earthMoon", "size": CGFloat(30.0), "distance": CGFloat(200.0), "rotation": CGFloat(0.005), "translation": CGFloat(10.0), "planetNode": SCNNode()]
+    var saturnRing: SCNNode!
     override func viewDidLoad() {
         super.viewDidLoad()
         scnView = self.view as! SCNView
@@ -74,6 +75,11 @@ class ViewController: NSViewController {
                         subPlanetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: subName)
                         scnScene.rootNode.addChildNode(subPlanetNode)
                     }
+                } else if (name == "saturn") {
+                    saturnRing = SCNNode()
+                    saturnRing.geometry = SCNTube(innerRadius: 410, outerRadius: 600, height: 2)
+                    saturnRing.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: "saturnRing")
+                    scnScene.rootNode.addChildNode(saturnRing)
                 }
                 scnScene.rootNode.addChildNode(planetNode)
             }
@@ -144,6 +150,10 @@ extension ViewController: SCNSceneRendererDelegate {
                         subPlanetNode.position.z = planetNode.position.z + (subDistance * sin(t * subTranslation * planetsSpeed))
                         subPlanetNode.eulerAngles.y += subRotation
                     }
+                } else if (name == "saturn") {
+                    saturnRing.eulerAngles.y += rotation
+                    saturnRing.position.x = planetNode.position.x
+                    saturnRing.position.z = planetNode.position.z
                 }
                 if (name == cameraWatch) {
                     cameraNode.eulerAngles.x = -.pi / 7
