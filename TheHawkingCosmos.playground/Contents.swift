@@ -60,9 +60,7 @@ class ViewController: NSViewController {
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 18500)
         scnScene.rootNode.addChildNode(cameraNode)
         scnScene.rootNode.addParticleSystem(SCNParticleSystem(named: "starsParticle", inDirectory: "/")!)
-        starsNode = SCNNode()
-        starsNode.geometry = SCNSphere(radius: 12200)
-        starsNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: "stars")
+        starsNode = createSphere(name: "stars", radius: 12200)
         starsNode.geometry?.firstMaterial?.isDoubleSided = true
         starsNode.geometry?.firstMaterial?.diffuse.intensity = 2
         scnScene.rootNode.addChildNode(starsNode)
