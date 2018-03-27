@@ -153,10 +153,10 @@ extension ViewController: SCNSceneRendererDelegate {
                     }
                 }
                 if (name == cameraWatch) {
-                    cameraNode.eulerAngles.x = -.pi / 4
-                    cameraNode.position.x = planetNode.position.x - ((size * 2) / 3)
-                    cameraNode.position.y = planetNode.position.y + size * 2
-                    cameraNode.position.z = planetNode.position.z + size * 2
+                    cameraNode.eulerAngles.x = -.pi / 7
+                    cameraNode.position.x = planetNode.position.x - ((size * 2) / 2.5)
+                    cameraNode.position.y = planetNode.position.y + size * 1.5
+                    cameraNode.position.z = planetNode.position.z + size * 3
                 }
             }
         }
