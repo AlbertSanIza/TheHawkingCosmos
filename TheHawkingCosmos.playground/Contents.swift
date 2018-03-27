@@ -92,7 +92,7 @@ class ViewController: NSViewController {
                     saturnRing.eulerAngles.x = 0.2
                     saturnRing.geometry = SCNTube(innerRadius: 410, outerRadius: 600, height: 2)
                     saturnRing.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: "saturnRing")
-                    scnScene.rootNode.addChildNode(saturnRing)
+                    planetNode.addChildNode(saturnRing)
                 }
                 scnScene.rootNode.addChildNode(planetNode)
             }
