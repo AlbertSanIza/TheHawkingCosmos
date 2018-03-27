@@ -100,6 +100,12 @@ class ViewController: NSViewController {
         torus.firstMaterial?.diffuse.contents = NSColor.systemBlue
         return SCNNode(geometry: torus)
     }
+    func createSphere(name: String, radius: CGFloat) -> SCNNode {
+        let sphere = SCNSphere(radius: radius)
+        sphere.segmentCount = 33
+        sphere.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: name)
+        return SCNNode(geometry: sphere)
+    }
     func checkOrientationAngles(rad: CGFloat) -> CGFloat {
         return rad > (2 * .pi) ? 0 : (rad < 0 ? 2 * .pi : rad)
     }
