@@ -3,8 +3,7 @@ import SpriteKit
 import Foundation
 //------------------------------------------------------------------------------------------------------------------------
 public class SceneFiles {
-    public init() {
-    }
+    public init() { }
     public func show(Scene: String) -> SKScene {
         let sceneFile: SKScene
         switch Scene {
