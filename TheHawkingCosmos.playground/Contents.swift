@@ -44,12 +44,10 @@ class ViewController: NSViewController {
         scnScene = SCNScene()
         scnView.scene = scnScene
         scnView.overlaySKScene = SceneFiles().show(Scene: "splash")
-        // create and add a light to the scene
         let lightNode = SCNNode()
         lightNode.light = SCNLight()
         lightNode.light?.type = .ambient
         lightNode.light?.color = NSColor(calibratedWhite: 0.5, alpha: 1.0)
-        lightNode.position.y = 1000
         scnScene.rootNode.addChildNode(lightNode)
         let omniLightNode = SCNNode()
         omniLightNode.light = SCNLight()
