@@ -160,7 +160,7 @@ extension ViewController: SCNSceneRendererDelegate {
         starsNode.eulerAngles.y += 0.0001
         starsNode.eulerAngles.z += 0.0001
         for planet in planetsInfo {
-            if let name: String = planet["name"] as! String?, let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let rotation: CGFloat = planet["rotation"] as! CGFloat?, let translation: CGFloat = planet["translation"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
+            if let name: String = planet["name"] as! String?, let radius: CGFloat = planet["radius"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let rotation: CGFloat = planet["rotation"] as! CGFloat?, let translation: CGFloat = planet["translation"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
                 planetNode.position.x = distance * cos(t * translation * planetsSpeed)
                 planetNode.position.z = distance * sin(t * translation * planetsSpeed)
                 planetNode.eulerAngles.y += rotation
@@ -173,9 +173,9 @@ extension ViewController: SCNSceneRendererDelegate {
                 }
                 if (name == cameraWatch) {
                     cameraNode.eulerAngles.x = -.pi / 7
-                    cameraNode.position.x = planetNode.position.x - ((size * 2) / 2.5)
-                    cameraNode.position.y = planetNode.position.y + size * 1.5
-                    cameraNode.position.z = planetNode.position.z + size * 3
+                    cameraNode.position.x = planetNode.position.x - ((radius * 2) / 2.5)
+                    cameraNode.position.y = planetNode.position.y + radius * 1.5
+                    cameraNode.position.z = planetNode.position.z + radius * 3
                 }
             }
         }
