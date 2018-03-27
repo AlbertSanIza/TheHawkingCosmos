@@ -31,7 +31,7 @@ class ViewController: NSViewController {
         ["name": "neptune", "radius": CGFloat(180.0), "distance": CGFloat(5750.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.182), "planetNode": SCNNode()],
         ["name": "pluto", "radius": CGFloat(90.0), "distance": CGFloat(6100.0), "rotation": CGFloat(-0.005), "translation": CGFloat(0.159), "planetNode": SCNNode()]
     ]
-    let earthMoonInfo: [String: Any?] = ["name": "earthMoon", "size": CGFloat(30.0), "distance": CGFloat(200.0), "rotation": CGFloat(0.005), "translation": CGFloat(10.0), "planetNode": SCNNode()]
+    let earthMoonInfo: [String: Any?] = ["name": "earthMoon", "radius": CGFloat(30.0), "distance": CGFloat(200.0), "rotation": CGFloat(0.005), "translation": CGFloat(10.0), "planetNode": SCNNode()]
     var saturnRing: SCNNode!
     override func viewDidLoad() {
         super.viewDidLoad()
