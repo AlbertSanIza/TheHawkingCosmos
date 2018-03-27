@@ -99,6 +99,12 @@ class ViewController: NSViewController {
         }
         nc.addObserver(self, selector: #selector(toViewControllerNotification(_:)), name: .toViewController, object: nil)
     }
+    func createRing(distance: CGFloat) -> SCNNode {
+        let torus = SCNTorus(ringRadius: distance, pipeRadius: 1)
+        torus.ringSegmentCount = 70
+        torus.firstMaterial?.diffuse.contents = NSColor.systemBlue
+        return SCNNode(geometry: torus)
+    }
     func checkOrientationAngles(rad: CGFloat) -> CGFloat {
         return rad > (2 * .pi) ? 0 : (rad < 0 ? 2 * .pi : rad)
     }
