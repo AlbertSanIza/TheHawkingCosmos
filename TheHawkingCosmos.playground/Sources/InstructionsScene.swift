@@ -11,12 +11,12 @@ public class InstructionsScene: SKScene {
         allNode = childNode(withName: "allNode") as SKNode?
     }
     override public func keyUp(with event: NSEvent) {
-        if (instructionsSceneStatus) {
+        if instructionsSceneStatus {
             goToScene(withName: String(event.keyCode))
         }
     }
     override public func mouseDown(with event: NSEvent) {
-        if (instructionsSceneStatus) {
+        if instructionsSceneStatus {
             let mousePoint = convertPoint(fromView: CGPoint(x: event.locationInWindow.x, y: event.locationInWindow.y))
             if let touchedNode = nodes(at: mousePoint).first {
                 goToScene(withName: touchedNode.name!)

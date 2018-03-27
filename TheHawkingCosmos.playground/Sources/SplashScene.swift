@@ -11,7 +11,7 @@ public class SplashScene: SKScene {
         allNode = childNode(withName: "allNode") as SKNode?
     }
     public override func keyUp(with event: NSEvent) {
-        if (splashSceneStatus) {
+        if splashSceneStatus {
             splashSceneStatus = false
             allNode.removeFromParent()
             nc.post(name: .toViewController, object: nil, userInfo: ["gotoMainMenuScene":  true])
