@@ -81,7 +81,7 @@ class ViewController: NSViewController {
                         scnScene.rootNode.addChildNode(subPlanetNode)
                     }
                 } else if (name == "saturn") {
-                    let loopNode = SCNNode(geometry: SCNBox(width: 1600, height: 1900, length: 0, chamferRadius: 0))
+                    let loopNode = SCNNode(geometry: SCNBox(width: 1700, height: 2000, length: 0, chamferRadius: 0))
                     loopNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: "saturnRing")
                     loopNode.rotation = SCNVector4(-0.5, -0.05, 0, 5)
                     planetNode.addChildNode(loopNode)
