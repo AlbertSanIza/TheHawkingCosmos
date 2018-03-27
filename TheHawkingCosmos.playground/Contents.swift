@@ -63,19 +63,19 @@ class ViewController: NSViewController {
         starsNode = createSphere(name: "stars", radius: 12200, intensity: 2, doubleSided: true)
         scnScene.rootNode.addChildNode(starsNode)
         for planet in planetsInfo {
-            if let name: String = planet["name"] as! String?, let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
+            if let name: String = planet["name"] as! String?, let radius: CGFloat = planet["radius"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
                 scnScene.rootNode.addChildNode(createRing(distance: distance))
                 planetNode.position = SCNVector3(x: distance, y: 0, z: 0)
-                planetNode.geometry = SCNSphere(radius: size)
+                planetNode.geometry = SCNSphere(radius: radius)
                 planetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: name)
                 planetNode.geometry?.firstMaterial?.diffuse.intensity = 1.5
                 if (name == "sun") {
                     planetNode.geometry?.firstMaterial?.diffuse.intensity = 9
                     planetNode.addParticleSystem(SCNParticleSystem(named: "sparksParticle", inDirectory: "/")!)
                 } else if name == "earth" {
-                    if let subName: String = earthMoonInfo["name"] as! String?, let subSize: CGFloat = earthMoonInfo["size"] as! CGFloat?, let subDistance: CGFloat = earthMoonInfo["distance"] as! CGFloat?, let subPlanetNode: SCNNode = earthMoonInfo["planetNode"] as! SCNNode? {
+                    if let subName: String = earthMoonInfo["name"] as! String?, let subRadius: CGFloat = earthMoonInfo["radius"] as! CGFloat?, let subDistance: CGFloat = earthMoonInfo["distance"] as! CGFloat?, let subPlanetNode: SCNNode = earthMoonInfo["planetNode"] as! SCNNode? {
                         subPlanetNode.position = SCNVector3(x: subDistance, y: 0, z: 0)
-                        subPlanetNode.geometry = SCNSphere(radius: subSize)
+                        subPlanetNode.geometry = SCNSphere(radius: subRadius)
                         subPlanetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: subName)
                         scnScene.rootNode.addChildNode(subPlanetNode)
                     }
