@@ -67,13 +67,8 @@ class ViewController: NSViewController {
         starsNode.geometry?.firstMaterial?.diffuse.intensity = 2
         scnScene.rootNode.addChildNode(starsNode)
         for planet in planetsInfo {
-            let ringNode = SCNNode()
             if let name: String = planet["name"] as! String?, let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
-                let torus = SCNTorus(ringRadius: distance, pipeRadius: 1)
-                torus.ringSegmentCount = 70
-                ringNode.geometry = torus
-                ringNode.geometry?.firstMaterial?.diffuse.contents = NSColor.systemBlue
-                scnScene.rootNode.addChildNode(ringNode)
+                scnScene.rootNode.addChildNode(createRing(distance: distance))
                 planetNode.position = SCNVector3(x: distance, y: 0, z: 0)
                 planetNode.geometry = SCNSphere(radius: size)
                 planetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: name)
