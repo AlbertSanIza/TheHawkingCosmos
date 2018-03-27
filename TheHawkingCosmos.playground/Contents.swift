@@ -66,7 +66,7 @@ class ViewController: NSViewController {
             if let name: String = planet["name"] as! String?, let radius: CGFloat = planet["radius"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
                 scnScene.rootNode.addChildNode(createRing(distance: distance))
                 let sphere = SCNSphere(radius: radius)
-                sphere.segmentCount = 70
+                sphere.segmentCount = 80
                 planetNode.geometry = sphere
                 planetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: name)
                 planetNode.geometry?.firstMaterial?.diffuse.intensity = 1.5
@@ -93,13 +93,13 @@ class ViewController: NSViewController {
     }
     func createRing(distance: CGFloat) -> SCNNode {
         let torus = SCNTorus(ringRadius: distance, pipeRadius: 1)
-        torus.ringSegmentCount = 70
+        torus.ringSegmentCount = 80
         torus.firstMaterial?.diffuse.contents = NSColor.systemBlue
         return SCNNode(geometry: torus)
     }
     func createSphere(name: String, radius: CGFloat, intensity: CGFloat, doubleSided: Bool) -> SCNNode {
         let sphere = SCNSphere(radius: radius)
-        sphere.segmentCount = 33
+        sphere.segmentCount = 80
         sphere.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: name)
         sphere.firstMaterial?.diffuse.intensity = intensity
         sphere.firstMaterial?.isDoubleSided = doubleSided
