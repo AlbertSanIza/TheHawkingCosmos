@@ -71,7 +71,7 @@ class ViewController: NSViewController {
                 planetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: name)
                 planetNode.geometry?.firstMaterial?.diffuse.intensity = 1.5
                 if (name == "sun") {
-                    planetNode.geometry?.firstMaterial?.diffuse.intensity = 9
+                    planetNode.geometry?.firstMaterial?.diffuse.intensity = 10
                     planetNode.addParticleSystem(SCNParticleSystem(named: "sparksParticle", inDirectory: "/")!)
                 } else if name == "earth" {
                     if let subName: String = earthMoonInfo["name"] as! String?, let subRadius: CGFloat = earthMoonInfo["radius"] as! CGFloat?, let subDistance: CGFloat = earthMoonInfo["distance"] as! CGFloat?, let subPlanetNode: SCNNode = earthMoonInfo["planetNode"] as! SCNNode? {
