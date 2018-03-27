@@ -60,9 +60,7 @@ class ViewController: NSViewController {
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 18500)
         scnScene.rootNode.addChildNode(cameraNode)
         scnScene.rootNode.addParticleSystem(SCNParticleSystem(named: "starsParticle", inDirectory: "/")!)
-        starsNode = createSphere(name: "stars", radius: 12200)
-        starsNode.geometry?.firstMaterial?.isDoubleSided = true
-        starsNode.geometry?.firstMaterial?.diffuse.intensity = 2
+        starsNode = createSphere(name: "stars", radius: 12200, intensity: 2, doubleSided: true)
         scnScene.rootNode.addChildNode(starsNode)
         for planet in planetsInfo {
             if let name: String = planet["name"] as! String?, let size: CGFloat = planet["size"] as! CGFloat?, let distance: CGFloat = planet["distance"] as! CGFloat?, let planetNode: SCNNode = planet["planetNode"] as! SCNNode? {
@@ -98,10 +96,12 @@ class ViewController: NSViewController {
         torus.firstMaterial?.diffuse.contents = NSColor.systemBlue
         return SCNNode(geometry: torus)
     }
-    func createSphere(name: String, radius: CGFloat) -> SCNNode {
+    func createSphere(name: String, radius: CGFloat, intensity: CGFloat, doubleSided: Bool) -> SCNNode {
         let sphere = SCNSphere(radius: radius)
         sphere.segmentCount = 33
         sphere.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: name)
+        sphere.firstMaterial?.diffuse.intensity = intensity
+        sphere.firstMaterial?.isDoubleSided = doubleSided
         return SCNNode(geometry: sphere)
     }
     func checkOrientationAngles(rad: CGFloat) -> CGFloat {
