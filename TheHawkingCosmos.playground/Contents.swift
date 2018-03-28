@@ -275,6 +275,10 @@ public class FlyScene: SKScene {
         case 37:
             lKey = false
             nc.post(name: .toViewController, object: nil, userInfo: ["lKey":  false])
+    func goToScene(withName: String) {
+        switch withName {
+        case "txtBack", "53", "11":
+            finalRemoveAnd(goto: "gotoStartScene")
         default: break
         }
     }
