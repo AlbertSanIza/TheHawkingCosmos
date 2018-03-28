@@ -237,8 +237,6 @@ public class StartScene: SKScene {
     }
     func goToScene(withName: String) {
         switch withName {
-        case "txtBack", "53", "11":
-            finalRemoveAnd(goto: "gotoMainMenuScene")
         case "txtSun":
             showInfo(Title: "Sun", Nickname: "The King of the Sky", Radius: "695,700 km", Distance: "----", Gravity: "274 m/s²", Orbital: "----")
         case "txtMercury":
