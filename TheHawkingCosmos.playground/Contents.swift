@@ -208,6 +208,7 @@ public class FlyScene: SKScene {
     var txtTitle: SKLabelNode!
     var txtSubTitle: SKLabelNode!
     var txtStart: SKLabelNode!
+    var flySceneStatus: Bool = true
     var wKey: Bool = false
     var sKey: Bool = false
     var aKey: Bool = false
