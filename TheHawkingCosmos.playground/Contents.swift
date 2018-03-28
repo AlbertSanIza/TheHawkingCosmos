@@ -70,7 +70,7 @@ class ViewController: NSViewController {
                 planetNode.geometry = sphere
                 planetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: name)
                 planetNode.geometry?.firstMaterial?.diffuse.intensity = 1.5
-                if (name == "sun") {
+                if name == "sun" {
                     planetNode.geometry?.firstMaterial?.diffuse.intensity = 10
                     planetNode.addParticleSystem(SCNParticleSystem(named: "sparksParticle", inDirectory: "/")!)
                 } else if name == "earth" {
@@ -80,7 +80,7 @@ class ViewController: NSViewController {
                         subPlanetNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: subName)
                         scnScene.rootNode.addChildNode(subPlanetNode)
                     }
-                } else if (name == "saturn") {
+                } else if name == "saturn" {
                     let loopNode = SCNNode(geometry: SCNBox(width: 1500, height: 1800, length: 0, chamferRadius: 0))
                     loopNode.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: "saturnRing")
                     loopNode.rotation = SCNVector4(-0.5, -0.05, 0, 5)
@@ -163,14 +163,14 @@ extension ViewController: SCNSceneRendererDelegate {
                 planetNode.position.x = distance * cos(t * translation * planetsSpeed)
                 planetNode.position.z = distance * sin(t * translation * planetsSpeed)
                 planetNode.eulerAngles.y += rotation
-                if (name == "earth") {
+                if name == "earth" {
                     if let subDistance: CGFloat = earthMoonInfo["distance"] as! CGFloat?, let subRotation: CGFloat = earthMoonInfo["rotation"] as! CGFloat?, let subTranslation: CGFloat = earthMoonInfo["translation"] as! CGFloat?, let subPlanetNode: SCNNode = earthMoonInfo["planetNode"] as! SCNNode? {
                         subPlanetNode.position.x = planetNode.position.x + (subDistance * cos(t * subTranslation * planetsSpeed))
                         subPlanetNode.position.z = planetNode.position.z + (subDistance * sin(t * subTranslation * planetsSpeed))
                         subPlanetNode.eulerAngles.y += subRotation
                     }
                 }
-                if (name == cameraWatch) {
+                if name == cameraWatch {
                     cameraNode.eulerAngles.x = -.pi / 7
                     cameraNode.position.x = planetNode.position.x - ((radius * 2) / 2.5)
                     cameraNode.position.y = planetNode.position.y + radius * 1.5
@@ -223,12 +223,12 @@ public class StartScene: SKScene {
         txtOrbitalString = nodeInfo.childNode(withName: "txtOrbitalString") as! SKLabelNode?
     }
     override public func keyUp(with event: NSEvent) {
-        if (startSceneStatus) {
+        if startSceneStatus {
             goToScene(withName: String(event.keyCode))
         }
     }
     override public func mouseDown(with event: NSEvent) {
-        if (startSceneStatus) {
+        if startSceneStatus {
             let mousePoint = convertPoint(fromView: CGPoint(x: event.locationInWindow.x, y: event.locationInWindow.y))
             if let touchedNode = nodes(at: mousePoint).first {
                 goToScene(withName: touchedNode.name!)
