@@ -93,7 +93,7 @@ class ViewController: NSViewController {
     }
     func createRing(distance: CGFloat) -> SCNNode {
         let torus = SCNTorus(ringRadius: distance, pipeRadius: 1)
-        torus.ringSegmentCount = 80
+        torus.ringSegmentCount = 100
         torus.firstMaterial?.diffuse.contents = NSColor.systemBlue
         return SCNNode(geometry: torus)
     }
