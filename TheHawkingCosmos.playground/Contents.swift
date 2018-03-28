@@ -122,8 +122,18 @@ class ViewController: NSViewController {
     @objc func toViewControllerNotification(_ notification: NSNotification) {
         if let boolValue: Bool = notification.userInfo?["wKey"] as? Bool {
             wKey = boolValue
+            if wKey {
+                starFighter.runAction(SCNAction.moveBy(x: 0, y: -0.3, z: 0, duration: 0.2))
+            } else {
+                starFighter.runAction(SCNAction.moveBy(x: 0, y: 0.3, z: 0, duration: 0.5))
+            }
         } else if let boolValue: Bool = notification.userInfo?["sKey"] as? Bool {
             sKey = boolValue
+            if sKey {
+                starFighter.runAction(SCNAction.moveBy(x: 0, y: 0.3, z: 0, duration: 0.2))
+            } else {
+                starFighter.runAction(SCNAction.moveBy(x: 0, y: -0.3, z: 0, duration: 0.5))
+            }
         } else if let boolValue: Bool = notification.userInfo?["aKey"] as? Bool {
             aKey = boolValue
             if aKey {
