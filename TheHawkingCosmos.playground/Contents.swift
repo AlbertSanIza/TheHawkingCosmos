@@ -61,6 +61,12 @@ class ViewController: NSViewController {
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 18500)
         scnScene.rootNode.addChildNode(cameraNode)
         scnScene.rootNode.addParticleSystem(SCNParticleSystem(named: "starsParticle", inDirectory: "/")!)
+        SCNScene(named: "starFighter.obj")?.rootNode.enumerateChildNodes({
+            (node, stop) in
+            starFighter = node as SCNNode
+        })
+        starFighter.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: "starFighter.png")
+        cameraNode.addChildNode(starFighter)
         starsNode = createSphere(name: "stars", radius: 12200, intensity: 2, doubleSided: true)
         scnScene.rootNode.addChildNode(starsNode)
         for planet in planetsInfo {
