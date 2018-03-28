@@ -185,10 +185,10 @@ extension ViewController: SCNSceneRendererDelegate {
             }
         }
         if oKey {
-            cameraNode.simdPosition += cameraNode.simdWorldFront * 10
+            cameraNode.simdPosition += cameraNode.simdWorldFront * 7
         }
         if lKey {
-            cameraNode.simdPosition -= cameraNode.simdWorldFront * 5
+            cameraNode.simdPosition -= cameraNode.simdWorldFront * 4
         }
         if wKey {
             cameraNode.eulerAngles.x = checkOrientationAngles(rad: cameraNode.eulerAngles.x + 0.004)
@@ -197,10 +197,10 @@ extension ViewController: SCNSceneRendererDelegate {
             cameraNode.eulerAngles.x = checkOrientationAngles(rad: cameraNode.eulerAngles.x - 0.004)
         }
         if aKey {
-            cameraNode.eulerAngles.y = checkOrientationAngles(rad: cameraNode.eulerAngles.y + 0.01)
+            cameraNode.eulerAngles.y = checkOrientationAngles(rad: cameraNode.eulerAngles.y + 0.004)
         }
         if dKey {
-            cameraNode.eulerAngles.y = checkOrientationAngles(rad: cameraNode.eulerAngles.y - 0.01)
+            cameraNode.eulerAngles.y = checkOrientationAngles(rad: cameraNode.eulerAngles.y - 0.004)
         }
     }
 }
