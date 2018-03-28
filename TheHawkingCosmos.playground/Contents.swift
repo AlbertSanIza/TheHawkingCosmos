@@ -219,26 +219,39 @@ public class FlyScene: SKScene {
         allNode = childNode(withName: "allNode") as SKNode?
     }
     public override func keyDown(with event: NSEvent) {
-        switch event.keyCode {
-        case 13:
-            if !wKey {
-                wKey = true
-                nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  true])
-            }
-        case 1:
-            if !sKey {
-                sKey = true
-                nc.post(name: .toViewController, object: nil, userInfo: ["sKey":  true])
-            }
-        case 0:
-            if !aKey {
-                aKey = true
-                nc.post(name: .toViewController, object: nil, userInfo: ["aKey":  true])
-            }
-        case 2:
-            if !dKey {
-                dKey = true
-                nc.post(name: .toViewController, object: nil, userInfo: ["dKey":  true])
+        if flySceneStatus {
+            switch event.keyCode {
+            case 13:
+                if !wKey {
+                    wKey = true
+                    nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  true])
+                }
+            case 1:
+                if !sKey {
+                    sKey = true
+                    nc.post(name: .toViewController, object: nil, userInfo: ["sKey":  true])
+                }
+            case 0:
+                if !aKey {
+                    aKey = true
+                    nc.post(name: .toViewController, object: nil, userInfo: ["aKey":  true])
+                }
+            case 2:
+                if !dKey {
+                    dKey = true
+                    nc.post(name: .toViewController, object: nil, userInfo: ["dKey":  true])
+                }
+            case 31:
+                if !oKey {
+                    oKey = true
+                    nc.post(name: .toViewController, object: nil, userInfo: ["oKey":  true])
+                }
+            case 37:
+                if !lKey {
+                    lKey = true
+                    nc.post(name: .toViewController, object: nil, userInfo: ["lKey":  true])
+                }
+            default: break
             }
         case 31:
             if !oKey {
