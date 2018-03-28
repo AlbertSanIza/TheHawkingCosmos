@@ -143,6 +143,7 @@ class ViewController: NSViewController {
             }
         } else if let _: Bool = notification.userInfo?["gotoStartScene"] as? Bool {
             cameraWatch = ""
+            starFighter.runAction(SCNAction.move(to: SCNVector3(x: 0, y: -4, z: 4), duration: 1))
             cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 12000, z: -400), duration: 1), SCNAction.rotateTo(x: -(.pi / 2), y: 0, z: 0, duration: 1)])) {
                 self.scnView.overlaySKScene = SceneFiles().show(Scene: "start")
             }
@@ -157,6 +158,7 @@ class ViewController: NSViewController {
         } else if let _: Bool = notification.userInfo?["gotoFlyScene"] as? Bool {
             cameraWatch = ""
             cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 100, z: 5000), duration: 1), SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)])) {
+                self.starFighter.runAction(SCNAction.move(to: SCNVector3(x: 0, y: 0, z: -4), duration: 2))
                 let sceneFile = FlyScene(fileNamed: "flyScene")!
                 sceneFile.scaleMode = .aspectFit
                 self.scnView.overlaySKScene = sceneFile
