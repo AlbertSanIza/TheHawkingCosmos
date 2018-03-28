@@ -18,7 +18,7 @@ public class SceneFiles {
         case "about":
             sceneFile = AboutScene(fileNamed: "aboutScene")!
         case "fly":
-            sceneFile = SplashScene(fileNamed: "flyScene")!
+            sceneFile = FlyScene(fileNamed: "flyScene")!
         default:
             sceneFile = SplashScene(fileNamed: "splashScene")!
         }
