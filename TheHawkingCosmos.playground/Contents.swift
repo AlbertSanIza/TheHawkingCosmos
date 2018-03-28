@@ -137,7 +137,7 @@ class ViewController: NSViewController {
                 self.scnView.overlaySKScene = sceneFile
             }
         } else if let _: Bool = notification.userInfo?["gotoInstructionsScene"] as? Bool {
-            cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 1000, z: -4500), duration: 1), SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)])) {
+            cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 1100, z: -5000), duration: 1), SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)])) {
                 self.scnView.overlaySKScene = SceneFiles().show(Scene: "instructions")
             }
         } else if let _: Bool = notification.userInfo?["gotoAboutScene"] as? Bool {
