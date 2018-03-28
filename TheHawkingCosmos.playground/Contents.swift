@@ -132,9 +132,7 @@ class ViewController: NSViewController {
             }
         } else if let _: Bool = notification.userInfo?["gotoStartScene"] as? Bool {
             cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 12000, z: -400), duration: 1), SCNAction.rotateTo(x: -(.pi / 2), y: 0, z: 0, duration: 1)])) {
-                let sceneFile = StartScene(fileNamed: "startScene")!
-                sceneFile.scaleMode = .aspectFit
-                self.scnView.overlaySKScene = sceneFile
+                self.scnView.overlaySKScene = SceneFiles().show(Scene: "start")
             }
         } else if let _: Bool = notification.userInfo?["gotoInstructionsScene"] as? Bool {
             cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 1100, z: -5000), duration: 1), SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)])) {
