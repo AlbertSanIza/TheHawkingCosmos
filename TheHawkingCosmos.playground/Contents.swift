@@ -126,8 +126,18 @@ class ViewController: NSViewController {
             sKey = boolValue
         } else if let boolValue: Bool = notification.userInfo?["aKey"] as? Bool {
             aKey = boolValue
+            if aKey {
+                starFighter.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0.2, duration: 0.2))
+            } else {
+                starFighter.runAction(SCNAction.rotateBy(x: 0, y: 0, z: -0.2, duration: 0.5))
+            }
         } else if let boolValue: Bool = notification.userInfo?["dKey"] as? Bool {
             dKey = boolValue
+            if dKey {
+                starFighter.runAction(SCNAction.rotateBy(x: 0, y: 0, z: -0.2, duration: 0.2))
+            } else {
+                starFighter.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0.2, duration: 0.5))
+            }
         } else if let boolValue: Bool = notification.userInfo?["oKey"] as? Bool {
             oKey = boolValue
         } else if let boolValue: Bool = notification.userInfo?["lKey"] as? Bool {
