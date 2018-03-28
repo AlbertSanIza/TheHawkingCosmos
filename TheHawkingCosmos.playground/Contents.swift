@@ -66,6 +66,8 @@ class ViewController: NSViewController {
             starFighter = node as SCNNode
         })
         starFighter.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: "starFighter.png")
+        starFighter.position.z = 4
+        starFighter.position.y = -4
         cameraNode.addChildNode(starFighter)
         starsNode = createSphere(name: "stars", radius: 12200, intensity: 2, doubleSided: true)
         scnScene.rootNode.addChildNode(starsNode)
