@@ -205,10 +205,8 @@ extension ViewController: SCNSceneRendererDelegate {
 //------------------------------------------------------------------------------------------------------------------------
 public class FlyScene: SKScene {
     let nc = NotificationCenter.default
-    var txtTitle: SKLabelNode!
-    var txtSubTitle: SKLabelNode!
-    var txtStart: SKLabelNode!
     var flySceneStatus: Bool = true
+    var allNode: SKNode!
     var wKey: Bool = false
     var sKey: Bool = false
     var aKey: Bool = false
@@ -217,9 +215,7 @@ public class FlyScene: SKScene {
     var lKey: Bool = false
     override public func sceneDidLoad() {
         super.sceneDidLoad()
-        txtTitle = childNode(withName: "txtTitle") as! SKLabelNode?
-        txtSubTitle = childNode(withName: "txtSubTitle") as! SKLabelNode?
-        txtStart = childNode(withName: "txtStart") as! SKLabelNode?
+        allNode = childNode(withName: "allNode") as SKNode?
     }
     public override func keyDown(with event: NSEvent) {
         switch event.keyCode {
