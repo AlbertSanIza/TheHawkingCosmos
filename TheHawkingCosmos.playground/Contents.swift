@@ -262,6 +262,10 @@ public class StartScene: SKScene {
         case "txtTop":
             nodeInfo.isHidden = true
             nc.post(name: .toViewController, object: nil, userInfo: ["cameraWatch": "Top"])
+        case "txtBack", "53", "11":
+            finalRemoveAnd(goto: "gotoMainMenuScene")
+        case "txtFly":
+            finalRemoveAnd(goto: "gotoFlyScene")
         default: break
         }
     }
