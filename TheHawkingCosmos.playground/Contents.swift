@@ -278,6 +278,11 @@ public class FlyScene: SKScene {
         default: break
         }
     }
+    func finalRemoveAnd(goto: String) {
+        flySceneStatus = false
+        allNode.removeFromParent()
+        nc.post(name: .toViewController, object: nil, userInfo: [goto: true])
+    }
 }
 //------------------------------------------------------------------------------------------------------------------------
 let viewController = ViewController()
