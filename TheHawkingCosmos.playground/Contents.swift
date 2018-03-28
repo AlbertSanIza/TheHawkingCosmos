@@ -69,6 +69,7 @@ class ViewController: NSViewController {
         starFighter.position.z = 4
         starFighter.position.y = -4
         starFighter.eulerAngles.y = -(.pi / 2)
+        starFighter.geometry?.firstMaterial?.diffuse.intensity = 1.5
         cameraNode.addChildNode(starFighter)
         starsNode = createSphere(name: "stars", radius: 12200, intensity: 2, doubleSided: true)
         scnScene.rootNode.addChildNode(starsNode)
