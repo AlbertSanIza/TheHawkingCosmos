@@ -142,6 +142,12 @@ class ViewController: NSViewController {
             cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 950, z: 1000), duration: 1), SCNAction.rotateTo(x: 0.3, y: 0, z: 0, duration: 1)])) {
                 self.scnView.overlaySKScene = SceneFiles().show(Scene: "about")
             }
+        } else if let _: Bool = notification.userInfo?["gotoFlyScene"] as? Bool {
+            cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 200, z: 5000), duration: 1), SCNAction.rotateTo(x: 0.3, y: 0, z: 0, duration: 1)])) {
+                let sceneFile = FlyScene(fileNamed: "flyScene")!
+                sceneFile.scaleMode = .aspectFit
+                self.scnView.overlaySKScene = sceneFile
+            }
         } else if let CameraWatch: String = notification.userInfo?["cameraWatch"] as? String {
             cameraWatch = CameraWatch == "Top" ? "" : CameraWatch.lowercased()
             if (cameraWatch == "") {
