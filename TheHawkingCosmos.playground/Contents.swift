@@ -140,6 +140,11 @@ class ViewController: NSViewController {
             }
         } else if let boolValue: Bool = notification.userInfo?["oKey"] as? Bool {
             oKey = boolValue
+            if oKey {
+                starFighter.runAction(SCNAction.moveBy(x: 0, y: 0, z: -1, duration: 0.2))
+            } else {
+                starFighter.runAction(SCNAction.moveBy(x: 0, y: 0, z: 1, duration: 0.2))
+            }
         } else if let boolValue: Bool = notification.userInfo?["lKey"] as? Bool {
             lKey = boolValue
         } else if let _: Bool = notification.userInfo?["gotoSplashScene"] as? Bool {
