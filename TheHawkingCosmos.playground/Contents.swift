@@ -282,6 +282,12 @@ public class FlyScene: SKScene {
     func finalRemoveAnd(goto: String) {
         flySceneStatus = false
         allNode.removeFromParent()
+        nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  false])
+        nc.post(name: .toViewController, object: nil, userInfo: ["sKey":  false])
+        nc.post(name: .toViewController, object: nil, userInfo: ["aKey":  false])
+        nc.post(name: .toViewController, object: nil, userInfo: ["dKey":  false])
+        nc.post(name: .toViewController, object: nil, userInfo: ["oKey":  false])
+        nc.post(name: .toViewController, object: nil, userInfo: ["lKey":  false])
         nc.post(name: .toViewController, object: nil, userInfo: [goto: true])
     }
 }
