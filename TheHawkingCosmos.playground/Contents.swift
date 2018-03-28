@@ -33,6 +33,7 @@ class ViewController: NSViewController {
     ]
     let earthMoonInfo: [String: Any?] = ["name": "earthMoon", "radius": CGFloat(30.0), "distance": CGFloat(200.0), "rotation": CGFloat(0.005), "translation": CGFloat(10.0), "planetNode": SCNNode()]
     var saturnRing: SCNNode!
+    var starFighter: SCNNode!
     override func viewDidLoad() {
         super.viewDidLoad()
         scnView = self.view as! SCNView
