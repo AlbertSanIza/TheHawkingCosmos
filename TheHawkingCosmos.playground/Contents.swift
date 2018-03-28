@@ -253,39 +253,43 @@ public class FlyScene: SKScene {
                 }
             default: break
             }
-        case 31:
-            if !oKey {
-                oKey = true
-                nc.post(name: .toViewController, object: nil, userInfo: ["oKey":  true])
-            }
-        case 37:
-            if !lKey {
-                lKey = true
-                nc.post(name: .toViewController, object: nil, userInfo: ["lKey":  true])
-            }
-        default: break
         }
     }
     public override func keyUp(with event: NSEvent) {
-        switch event.keyCode {
-        case 13:
-            wKey = false
-            nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  false])
-        case 1:
-            sKey = false
-            nc.post(name: .toViewController, object: nil, userInfo: ["sKey":  false])
-        case 0:
-            aKey = false
-            nc.post(name: .toViewController, object: nil, userInfo: ["aKey":  false])
-        case 2:
-            dKey = false
-            nc.post(name: .toViewController, object: nil, userInfo: ["dKey":  false])
-        case 31:
-            oKey = false
-            nc.post(name: .toViewController, object: nil, userInfo: ["oKey":  false])
-        case 37:
-            lKey = false
-            nc.post(name: .toViewController, object: nil, userInfo: ["lKey":  false])
+        if flySceneStatus {
+            switch event.keyCode {
+            case 13:
+                wKey = false
+                nc.post(name: .toViewController, object: nil, userInfo: ["wKey":  false])
+            case 1:
+                sKey = false
+                nc.post(name: .toViewController, object: nil, userInfo: ["sKey":  false])
+            case 0:
+                aKey = false
+                nc.post(name: .toViewController, object: nil, userInfo: ["aKey":  false])
+            case 2:
+                dKey = false
+                nc.post(name: .toViewController, object: nil, userInfo: ["dKey":  false])
+            case 31:
+                oKey = false
+                nc.post(name: .toViewController, object: nil, userInfo: ["oKey":  false])
+            case 37:
+                lKey = false
+                nc.post(name: .toViewController, object: nil, userInfo: ["lKey":  false])
+            case 53, 11:
+                goToScene(withName: String(event.keyCode))
+            default: break
+            }
+        }
+    }
+    override public func mouseDown(with event: NSEvent) {
+        if flySceneStatus {
+            let mousePoint = convertPoint(fromView: CGPoint(x: event.locationInWindow.x, y: event.locationInWindow.y))
+            if let touchedNode = nodes(at: mousePoint).first {
+                goToScene(withName: touchedNode.name!)
+            }
+        }
+    }
     func goToScene(withName: String) {
         switch withName {
         case "txtBack", "53", "11":
