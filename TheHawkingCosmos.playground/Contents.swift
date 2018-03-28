@@ -26,10 +26,10 @@ class ViewController: NSViewController {
         ["name": "earth", "radius": CGFloat(100.0), "distance": CGFloat(2050.0), "rotation": CGFloat(0.005), "translation": CGFloat(1.0), "planetNode": SCNNode()],
         ["name": "mars", "radius": CGFloat(60.0), "distance": CGFloat(2400.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.802), "planetNode": SCNNode()],
         ["name": "jupiter", "radius": CGFloat(500.0), "distance": CGFloat(3050.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.434), "planetNode": SCNNode()],
-        ["name": "saturn", "radius": CGFloat(400.0), "distance": CGFloat(4250.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.323), "planetNode": SCNNode()],
-        ["name": "uranus", "radius": CGFloat(200.0), "distance": CGFloat(5200.0), "rotation": CGFloat(-0.005), "translation": CGFloat(0.228), "planetNode": SCNNode()],
-        ["name": "neptune", "radius": CGFloat(180.0), "distance": CGFloat(5750.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.182), "planetNode": SCNNode()],
-        ["name": "pluto", "radius": CGFloat(90.0), "distance": CGFloat(6100.0), "rotation": CGFloat(-0.005), "translation": CGFloat(0.159), "planetNode": SCNNode()]
+        ["name": "saturn", "radius": CGFloat(350.0), "distance": CGFloat(4350.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.323), "planetNode": SCNNode()],
+        ["name": "uranus", "radius": CGFloat(200.0), "distance": CGFloat(5400.0), "rotation": CGFloat(-0.005), "translation": CGFloat(0.228), "planetNode": SCNNode()],
+        ["name": "neptune", "radius": CGFloat(180.0), "distance": CGFloat(5950.0), "rotation": CGFloat(0.005), "translation": CGFloat(0.182), "planetNode": SCNNode()],
+        ["name": "pluto", "radius": CGFloat(90.0), "distance": CGFloat(6300.0), "rotation": CGFloat(-0.005), "translation": CGFloat(0.159), "planetNode": SCNNode()]
     ]
     let earthMoonInfo: [String: Any?] = ["name": "earthMoon", "radius": CGFloat(30.0), "distance": CGFloat(200.0), "rotation": CGFloat(0.005), "translation": CGFloat(10.0), "planetNode": SCNNode()]
     var saturnRing: SCNNode!
