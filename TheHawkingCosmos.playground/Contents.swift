@@ -1,7 +1,17 @@
 //------------------------------------------------------------------------------------------------------------------------
 //
 //
+//    Hello Judge,
 //
+//    This is my WWDC2018 Entry...
+//
+//    There is just something you need to take in mind, the best size is #3.. if
+//    its to small or too big you can change it below on line 22... sorry for the
+//    inconvinience ❤️
+//
+//
+//    Thanks,
+//    Albert Sanchez
 //
 //
 //------------------------------------------------------------------------------------------------------------------------
