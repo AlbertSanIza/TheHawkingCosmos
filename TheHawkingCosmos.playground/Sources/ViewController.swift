@@ -126,7 +126,7 @@ public class ViewController: NSViewController {
             musicPlayer = try! AVAudioPlayer.init(contentsOf: filePath as URL)
             musicPlayer?.numberOfLoops = -1
             musicPlayer?.prepareToPlay()
-            musicPlayer?.volume = 0.2
+            musicPlayer?.volume = 0.3
             musicPlayer?.play()
         }
     }
