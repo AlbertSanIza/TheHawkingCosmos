@@ -131,7 +131,7 @@ public class ViewController: NSViewController {
         }
     }
     func playMusicFly() {
-        if let path = Bundle.main.path(forResource: "space", ofType: "flac") {
+        if let path = Bundle.main.path(forResource: "theDarkAmulet", ofType: "mp3") {
             let filePath = NSURL(fileURLWithPath:path)
             musicPlayer = try! AVAudioPlayer.init(contentsOf: filePath as URL)
             musicPlayer?.numberOfLoops = -1
