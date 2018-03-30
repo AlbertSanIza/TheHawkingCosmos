@@ -36,13 +36,7 @@ public class ViewController: NSViewController {
     var starFighter: SCNNode!
     override public func viewDidLoad() {
         super.viewDidLoad()
-        if let path = Bundle.main.path(forResource: "space", ofType: "flac") {
-            let filePath = NSURL(fileURLWithPath:path)
-            musicPlayer = try! AVAudioPlayer.init(contentsOf: filePath as URL)
-            musicPlayer?.prepareToPlay()
-            musicPlayer?.volume = 0.1
-            musicPlayer?.play()
-        }
+        playMusicMenus()
         scnView = self.view as! SCNView
         scnView.showsStatistics = true
         scnView.backgroundColor = NSColor.black
@@ -125,6 +119,27 @@ public class ViewController: NSViewController {
     }
     func checkOrientationAngles(rad: CGFloat) -> CGFloat {
         return rad > (2 * .pi) ? 0 : (rad < 0 ? 2 * .pi : rad)
+    }
+    func playMusicMenus() {
+        if let path = Bundle.main.path(forResource: "space", ofType: "flac") {
+            let filePath = NSURL(fileURLWithPath:path)
+            musicPlayer = try! AVAudioPlayer.init(contentsOf: filePath as URL)
+            musicPlayer?.numberOfLoops = -1
+            musicPlayer?.prepareToPlay()
+            musicPlayer?.volume = 0.2
+            musicPlayer?.play()
+        }
+    }
+    func playMusicFly() {
+        if let path = Bundle.main.path(forResource: "space", ofType: "flac") {
+            let filePath = NSURL(fileURLWithPath:path)
+            musicPlayer = try! AVAudioPlayer.init(contentsOf: filePath as URL)
+            musicPlayer?.numberOfLoops = -1
+            musicPlayer?.prepareToPlay()
+            musicPlayer?.volume = 0.2
+            musicPlayer?.play()
+        }
+
     }
     @objc func toViewControllerNotification(_ notification: NSNotification) {
         if let boolValue: Bool = notification.userInfo?["wKey"] as? Bool {
