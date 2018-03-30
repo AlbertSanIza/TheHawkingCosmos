@@ -38,7 +38,7 @@ public class ViewController: NSViewController {
         super.viewDidLoad()
         playMusicMenus()
         scnView = self.view as! SCNView
-        scnView.showsStatistics = true
+        scnView.showsStatistics = false
         scnView.backgroundColor = NSColor.black
         scnView.allowsCameraControl = false
         scnView.delegate = self
