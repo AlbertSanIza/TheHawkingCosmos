@@ -214,6 +214,12 @@ public class ViewController: NSViewController {
             if (cameraWatch == "") {
                 cameraNode.runAction(SCNAction.group([SCNAction.move(to: SCNVector3(x: 0, y: 12000, z: -400), duration: 1), SCNAction.rotateTo(x: -(.pi / 2), y: 0, z: 0, duration: 1)]))
             }
+        } else if let _: Bool = notification.userInfo?["playMusicMenus"] as? Bool {
+            musicPlayer?.stop()
+            playMusicMenus()
+        } else if let _: Bool = notification.userInfo?["playMusicFly"] as? Bool {
+            musicPlayer?.stop()
+            playMusicFly()
         }
     }
 }
