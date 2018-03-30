@@ -1,6 +1,7 @@
 //------------------------------------------------------------------------------------------------------------------------
 import SceneKit
 import Foundation
+import AVFoundation
 //------------------------------------------------------------------------------------------------------------------------
 public class ViewController: NSViewController {
     let nc = NotificationCenter.default
@@ -17,6 +18,7 @@ public class ViewController: NSViewController {
     var lKey: Bool = false
     var t: CGFloat = 100.0 * CGFloat(drand48())
     var planetsSpeed: CGFloat = 2
+    var musicPlayer: AVAudioPlayer?
     let planetsInfo = [
         ["name": "sun", "radius": CGFloat(1000.0), "distance": CGFloat(0.0), "rotation": CGFloat(0.002), "translation": CGFloat(3.0), "planetNode": SCNNode()],
         ["name": "mercury", "radius": CGFloat(50.0), "distance": CGFloat(1400.0), "rotation": CGFloat(0.005), "translation": CGFloat(1.607), "planetNode": SCNNode()],
@@ -34,6 +36,13 @@ public class ViewController: NSViewController {
     var starFighter: SCNNode!
     override public func viewDidLoad() {
         super.viewDidLoad()
+        if let path = Bundle.main.path(forResource: "space", ofType: "flac") {
+            let filePath = NSURL(fileURLWithPath:path)
+            musicPlayer = try! AVAudioPlayer.init(contentsOf: filePath as URL)
+            musicPlayer?.prepareToPlay()
+            musicPlayer?.volume = 0.1
+            musicPlayer?.play()
+        }
         scnView = self.view as! SCNView
         scnView.showsStatistics = true
         scnView.backgroundColor = NSColor.black
