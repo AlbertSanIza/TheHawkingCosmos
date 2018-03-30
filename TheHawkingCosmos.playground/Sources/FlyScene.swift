@@ -15,6 +15,7 @@ public class FlyScene: SKScene {
     override public func sceneDidLoad() {
         super.sceneDidLoad()
         allNode = childNode(withName: "allNode") as SKNode?
+        nc.post(name: .toViewController, object: nil, userInfo: ["playMusicFly": true])
     }
     public override func keyDown(with event: NSEvent) {
         if flySceneStatus {
@@ -104,6 +105,7 @@ public class FlyScene: SKScene {
         nc.post(name: .toViewController, object: nil, userInfo: ["dKey":  false])
         nc.post(name: .toViewController, object: nil, userInfo: ["oKey":  false])
         nc.post(name: .toViewController, object: nil, userInfo: ["lKey":  false])
+        nc.post(name: .toViewController, object: nil, userInfo: ["playMusicMenus": true])
         nc.post(name: .toViewController, object: nil, userInfo: [goto: true])
     }
 }
