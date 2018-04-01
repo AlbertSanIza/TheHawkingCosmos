@@ -10,10 +10,10 @@ public class InstructionsScene: SKScene {
         super.sceneDidLoad()
         allNode = childNode(withName: "allNode") as SKNode?
         if let SKSpriteNode1: SKSpriteNode = allNode.childNode(withName: "SKSpriteNode1") as! SKSpriteNode? {
-            SKSpriteNode1.texture = SKTexture(imageNamed: "instructionsOne.png")
+            SKSpriteNode1.texture = SKTexture(imageNamed: "instructionsTwo.png")
         }
         if let SKSpriteNode2: SKSpriteNode = allNode.childNode(withName: "SKSpriteNode2") as! SKSpriteNode? {
-            SKSpriteNode2.texture = SKTexture(imageNamed: "instructionsTwo.png")
+            SKSpriteNode2.texture = SKTexture(imageNamed: "instructionsOne.png")
         }
     }
     override public func keyUp(with event: NSEvent) {
