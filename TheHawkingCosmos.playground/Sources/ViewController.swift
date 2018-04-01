@@ -49,7 +49,7 @@ public class ViewController: NSViewController {
         let lightNode = SCNNode()
         lightNode.light = SCNLight()
         lightNode.light?.type = .ambient
-        lightNode.light?.color = NSColor(calibratedWhite: 0.5, alpha: 1.0)
+        lightNode.light?.color = NSColor(calibratedWhite: 0.4, alpha: 1.0)
         scnScene.rootNode.addChildNode(lightNode)
         let omniLightNode = SCNNode()
         omniLightNode.light = SCNLight()
