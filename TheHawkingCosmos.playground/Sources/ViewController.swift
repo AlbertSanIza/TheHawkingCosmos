@@ -36,7 +36,7 @@ public class ViewController: NSViewController {
     var starFighter: SCNNode!
     override public func viewDidLoad() {
         super.viewDidLoad()
-        playMusicMenus()
+        playMusic(forResource: "space", ofType: "flac")
         scnView = self.view as! SCNView
         scnView.showsStatistics = false
         scnView.backgroundColor = NSColor.black
@@ -120,8 +120,8 @@ public class ViewController: NSViewController {
     func checkOrientationAngles(rad: CGFloat) -> CGFloat {
         return rad > (2 * .pi) ? 0 : (rad < 0 ? 2 * .pi : rad)
     }
-    func playMusicMenus() {
-        if let path = Bundle.main.path(forResource: "space", ofType: "flac") {
+    func playMusic(forResource: String, ofType: String) {
+        if let path = Bundle.main.path(forResource: forResource, ofType: ofType) {
             let filePath = NSURL(fileURLWithPath:path)
             musicPlayer = try! AVAudioPlayer.init(contentsOf: filePath as URL)
             musicPlayer?.numberOfLoops = -1
@@ -129,17 +129,6 @@ public class ViewController: NSViewController {
             musicPlayer?.volume = 0.3
             musicPlayer?.play()
         }
-    }
-    func playMusicFly() {
-        if let path = Bundle.main.path(forResource: "theDarkAmulet", ofType: "mp3") {
-            let filePath = NSURL(fileURLWithPath:path)
-            musicPlayer = try! AVAudioPlayer.init(contentsOf: filePath as URL)
-            musicPlayer?.numberOfLoops = -1
-            musicPlayer?.prepareToPlay()
-            musicPlayer?.volume = 0.2
-            musicPlayer?.play()
-        }
-
     }
     @objc func toViewControllerNotification(_ notification: NSNotification) {
         if let boolValue: Bool = notification.userInfo?["wKey"] as? Bool {
@@ -216,10 +205,10 @@ public class ViewController: NSViewController {
             }
         } else if let _: Bool = notification.userInfo?["playMusicMenus"] as? Bool {
             musicPlayer?.stop()
-            playMusicMenus()
+            playMusic(forResource: "space", ofType: "flac")
         } else if let _: Bool = notification.userInfo?["playMusicFly"] as? Bool {
             musicPlayer?.stop()
-            playMusicFly()
+            playMusic(forResource: "theDarkAmulet", ofType: "mp3")
         }
     }
 }
